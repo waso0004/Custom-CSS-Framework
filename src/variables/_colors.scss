@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+$colors: (
+    'white': #FFFFFF,
+    'black': #1a1a2e,
+    'gray': #b0b3b8,
+    'blue': #7ea8e8,
+    'green': #81c784,
+    'red': #ef9a9a,
+    'purple': #b39ddb,
+    'pink': #f48fb1,
+    'yellow': #fff59d,
+);
+
+@each $color-name, $color-value in $colors {
+    .bg-#{$color-name} {
+        background-color: $color-value;
+    }
+
+    .text-#{$color-name} {
+        color: $color-value;
+    }
+}
+
+$theme: (
+    'primary': map.get($colors, 'blue'),
+    'success': map.get($colors, 'green'),
+    'error': map.get($colors, 'red'),
+    'light': map.get($colors, 'white'),
+    'dark': map.get($colors, 'black')
+);

@@ -1,0 +1,22 @@
+@use '../fonts/index' as fonts;
+
+$fonts: (
+    'body': fonts.$font-roboto,
+    'heading': fonts.$font-roboto,
+    'code': fonts.$font-roboto-mono
+);
+
+$font-sizes: (
+    'sm': 12px,
+    'md': 16px,
+    'lg': 24px,
+    'xl': 36px,
+    '2xl': 48px,
+    '3xl': 64px
+);
+
+@each $name, $size in $font-sizes {
+    .text-#{$name} {
+        font-size: $size;
+    }
+}
