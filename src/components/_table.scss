@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "../variables/_typography" as typography;
+@use "../variables/_colors" as colors;
+@use "../variables/_spacing" as spacing;
+@use "../variables/_font-weight" as font-weight;
+
+//base 
+table {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: map.get(typography.$fonts, "body");
+  font-size: map.get(typography.$font-sizes, "md");
+  margin-bottom: map.get(spacing.$spacing, "4");
+}
+thead {
+  background-color: map.get(colors.$colors, "blue");
+}
+
+//header
+th {
+  text-align: left;
+  font-weight: map.get(font-weight.$font-weights, "bold");
+  padding: map.get(spacing.$spacing, "3");
+  border: 0.5px solid map.get(colors.$colors, "white");
+}
+
+//cell
+td {
+  padding: map.get(spacing.$spacing, "3");
+  border: 0.5px solid map.get(colors.$colors, "white");
+}

@@ -73,6 +73,14 @@ ul,
 dl,
 ol {
   font-family: map.get(typography.$fonts, "body");
+  font-size: map.get(typography.$font-sizes, "md");
+  margin: 0 0 map.get(spacing.$spacing, "3") 0;
+  padding-left: map.get(spacing.$spacing, "5");
+}
+
+li {
+  margin-bottom: map.get(spacing.$spacing, "1");
+  line-height: 1.6;
 }
 
 // Code
