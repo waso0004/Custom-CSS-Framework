@@ -989,6 +989,66 @@ meter {
     width: 100%;
   }
 }
+.form-container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: white;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(126, 168, 232, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 14px;
+}
+
+.choice-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+.choice-group input {
+  appearance: revert;
+  width: auto;
+  height: auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.choice-group label {
+  font-size: 14px;
+  color: white;
+}
+
 h1 {
   font-family: "Roboto", sans-serif;
   font-size: 64px;
@@ -1050,11 +1110,16 @@ p {
   margin-bottom: 12px;
 }
 
-ul, dl, ol {
+ul,
+dl,
+ol {
   font-family: "Roboto", sans-serif;
 }
 
-code, pre, kbd, samp {
+code,
+pre,
+kbd,
+samp {
   font-family: "Roboto Mono", monospace;
 }
 

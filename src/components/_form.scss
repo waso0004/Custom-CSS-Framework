@@ -1,0 +1,67 @@
+@use "sass:map";
+@use "../variables/index" as variables;
+
+.form-container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgba(map.get(variables.$theme, "light"), 0.4);
+}
+
+.form-group {
+  margin-bottom: 16px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: rgba(map.get(variables.$theme, "light"), 1);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(map.get(variables.$theme, "light"), 0.5);
+    background-color: rgba(map.get(variables.$theme, "light"), 0.1);
+    color: rgba(map.get(variables.$theme, "light"), 0.9);
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: rgba(map.get(variables.$theme, "primary"), 0.5);
+      background-color: rgba(map.get(variables.$theme, "light"), 0.2);
+    }
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(map.get(variables.$theme, "light"), 0.5);
+    background-color: rgba(map.get(variables.$theme, "light"), 0.1);
+    color: rgba(map.get(variables.$theme, "light"), 1);
+    font-size: 14px;
+  }
+}
+
+.choice-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+
+  input {
+    appearance: revert;
+    width: auto;
+    height: auto;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  label {
+    font-size: 14px;
+    color: rgba(map.get(variables.$theme, "light"), 1);
+  }
+}

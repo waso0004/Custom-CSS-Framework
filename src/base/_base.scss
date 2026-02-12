@@ -1,84 +1,89 @@
-@use 'sass:map';
-@use '../variables/typography' as typography;
-@use '../variables/colors' as colors;
-@use '../variables/spacing' as spacing;
-@use '../variables/font-weight' as font-weight;
-@use '../components/index' as components;
+@use "sass:map";
+@use "../variables/typography" as typography;
+@use "../variables/colors" as colors;
+@use "../variables/spacing" as spacing;
+@use "../variables/font-weight" as font-weight;
+@use "../components/index" as components;
 
 // Headings
 h1 {
-    font-family: map.get(typography.$fonts, 'heading');
-    font-size: map.get(typography.$font-sizes, '3xl');
-    font-weight: map.get(font-weight.$font-weights, 'bold');
-    color: map.get(colors.$colors, 'white');
-    margin-bottom: map.get(spacing.$spacing, '3');
+  font-family: map.get(typography.$fonts, "heading");
+  font-size: map.get(typography.$font-sizes, "3xl");
+  font-weight: map.get(font-weight.$font-weights, "bold");
+  color: map.get(colors.$colors, "white");
+  margin-bottom: map.get(spacing.$spacing, "3");
 }
 
 h2 {
-    font-family: map.get(typography.$fonts, 'heading');
-    font-size: map.get(typography.$font-sizes, '2xl');
-    font-weight: map.get(font-weight.$font-weights, 'bold');
-    color: map.get(colors.$colors, 'white');
-    margin-bottom: map.get(spacing.$spacing, '3');
+  font-family: map.get(typography.$fonts, "heading");
+  font-size: map.get(typography.$font-sizes, "2xl");
+  font-weight: map.get(font-weight.$font-weights, "bold");
+  color: map.get(colors.$colors, "white");
+  margin-bottom: map.get(spacing.$spacing, "3");
 }
 
 h3 {
-    font-family: map.get(typography.$fonts, 'heading');
-    font-size: map.get(typography.$font-sizes, 'xl');
-    font-weight: map.get(font-weight.$font-weights, 'medium');
-    color: map.get(colors.$colors, 'white');
-    margin-bottom: map.get(spacing.$spacing, '2');
+  font-family: map.get(typography.$fonts, "heading");
+  font-size: map.get(typography.$font-sizes, "xl");
+  font-weight: map.get(font-weight.$font-weights, "medium");
+  color: map.get(colors.$colors, "white");
+  margin-bottom: map.get(spacing.$spacing, "2");
 }
 
 h4 {
-    font-family: map.get(typography.$fonts, 'heading');
-    font-size: map.get(typography.$font-sizes, 'lg');
-    font-weight: map.get(font-weight.$font-weights, 'medium');
-    color: map.get(colors.$colors, 'white');
-    margin-bottom: map.get(spacing.$spacing, '2');
+  font-family: map.get(typography.$fonts, "heading");
+  font-size: map.get(typography.$font-sizes, "lg");
+  font-weight: map.get(font-weight.$font-weights, "medium");
+  color: map.get(colors.$colors, "white");
+  margin-bottom: map.get(spacing.$spacing, "2");
 }
 
 h5 {
-    font-family: map.get(typography.$fonts, 'heading');
-    font-size: map.get(typography.$font-sizes, 'md');
-    font-weight: map.get(font-weight.$font-weights, 'medium');
-    color: map.get(colors.$colors, 'white');
-    margin-bottom: map.get(spacing.$spacing, '1');
+  font-family: map.get(typography.$fonts, "heading");
+  font-size: map.get(typography.$font-sizes, "md");
+  font-weight: map.get(font-weight.$font-weights, "medium");
+  color: map.get(colors.$colors, "white");
+  margin-bottom: map.get(spacing.$spacing, "1");
 }
 
 h6 {
-    font-family: map.get(typography.$fonts, 'heading');
-    font-size: map.get(typography.$font-sizes, 'sm');
-    font-weight: map.get(font-weight.$font-weights, 'medium');
-    color: map.get(colors.$colors, 'white');
-    margin-bottom: map.get(spacing.$spacing, '1');
+  font-family: map.get(typography.$fonts, "heading");
+  font-size: map.get(typography.$font-sizes, "sm");
+  font-weight: map.get(font-weight.$font-weights, "medium");
+  color: map.get(colors.$colors, "white");
+  margin-bottom: map.get(spacing.$spacing, "1");
 }
 
 // Body text
 body {
-    font-family: map.get(typography.$fonts, 'body');
-    font-size: map.get(typography.$font-sizes, 'md');
-    font-weight: map.get(font-weight.$font-weights, 'regular');
-    color: map.get(colors.$colors, 'white');
+  font-family: map.get(typography.$fonts, "body");
+  font-size: map.get(typography.$font-sizes, "md");
+  font-weight: map.get(font-weight.$font-weights, "regular");
+  color: map.get(colors.$colors, "white");
 }
 
 p {
-    font-family: map.get(typography.$fonts, 'body');
-    font-size: map.get(typography.$font-sizes, 'md');
-    margin-bottom: map.get(spacing.$spacing, '3');
+  font-family: map.get(typography.$fonts, "body");
+  font-size: map.get(typography.$font-sizes, "md");
+  margin-bottom: map.get(spacing.$spacing, "3");
 }
 
 // Lists
-ul, dl, ol {
-    font-family: map.get(typography.$fonts, 'body');
+ul,
+dl,
+ol {
+  font-family: map.get(typography.$fonts, "body");
 }
 
 // Code
-code, pre, kbd, samp {
-    font-family: map.get(typography.$fonts, 'code');
+code,
+pre,
+kbd,
+samp {
+  font-family: map.get(typography.$fonts, "code");
 }
 
 // Default button
 button {
-    @include components.f-button;
+  @include components.f-button;
 }
