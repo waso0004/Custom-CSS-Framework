@@ -1049,6 +1049,32 @@ meter {
   color: white;
 }
 
+table {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+thead {
+  background-color: #7ea8e8;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+  padding: 12px;
+  border: 0.5px solid #FFFFFF;
+}
+
+td {
+  padding: 12px;
+  border: 0.5px solid #FFFFFF;
+}
+
 h1 {
   font-family: "Roboto", sans-serif;
   font-size: 64px;
@@ -1114,6 +1140,14 @@ ul,
 dl,
 ol {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 4px;
+  line-height: 1.6;
 }
 
 code,
