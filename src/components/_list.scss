@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "../variables/index" as variables;
+
+// Base list styling
+ul,
+ol {
+    margin: 0;
+    margin-bottom: map.get(variables.$spacing, "4");
+    padding-left: map.get(variables.$spacing, "4");
+    font-family: map.get(variables.$fonts, "body");
+    font-weight: map.get(variables.$font-weights, "regular");
+}
+
+li {
+    margin-bottom: map.get(variables.$spacing, "3");
+    line-height: 1.9;
+}
+
+li ul,
+li ol {
+    margin-top: map.get(variables.$spacing, "1");
+}
+
+ul {
+  list-style-type: square;
+}
+ol {
+  list-style-type: decimal;
+}
+
