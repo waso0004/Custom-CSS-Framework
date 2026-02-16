@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../variables/index" as variables;
+
+// Base heading styling
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    margin-bottom: map.get(variables.$spacing, "4");
+    font-family: map.get(variables.$fonts, "heading");
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: map.get(variables.$font-sizes, "3xl");
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-size: map.get(variables.$font-sizes, "2xl");
+}
+
+h3 {
+  font-size: map.get(variables.$font-sizes, "xl");
+}
+
+h4 {
+  font-size: map.get(variables.$font-sizes, "lg");
+}
+
+h5 {
+  font-size: map.get(variables.$font-sizes, "md");
+}
+
+h6 {
+  font-size: map.get(variables.$font-sizes, "sm");
+}
