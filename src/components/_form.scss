@@ -4,8 +4,12 @@
 .form-container {
   max-width: 50%;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid rgba(map.get(variables.$theme, "light"), 0.4);
+  padding: 24px;
+  border-radius: 20px;
+  background-color: rgba(map.get(variables.$theme, "light"), 0.02);
+  border: 1px solid rgba(map.get(variables.$theme, "light"), 0.15);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .form-group {
@@ -15,34 +19,69 @@
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
-    color: rgba(map.get(variables.$theme, "light"), 1);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(map.get(variables.$theme, "light"), 0.8);
   }
 
   input,
   textarea {
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(map.get(variables.$theme, "light"), 0.5);
-    background-color: rgba(map.get(variables.$theme, "light"), 0.1);
-    color: rgba(map.get(variables.$theme, "light"), 0.9);
+    padding: 12px 24px;
+    border-radius: 20px;
+    border: 1px solid rgba(map.get(variables.$theme, "light"), 0.15);
+    background-color: rgba(map.get(variables.$theme, "light"), 0.02);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: rgba(map.get(variables.$theme, "light"), 0.8);
     font-size: 14px;
+    letter-spacing: 2px;
+
+    &:hover {
+      background-color: rgba(map.get(variables.$theme, "light"), 0.2);
+    }
 
     &:focus {
       outline: none;
-      border-color: rgba(map.get(variables.$theme, "primary"), 0.5);
-      background-color: rgba(map.get(variables.$theme, "light"), 0.2);
+      border-color: rgba(map.get(variables.$theme, "primary"), 0.4);
+      background-color: rgba(map.get(variables.$theme, "primary"), 0.3);
     }
   }
 
   select {
+    appearance: none;
+    -webkit-appearance: none;
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(map.get(variables.$theme, "light"), 0.5);
-    background-color: rgba(map.get(variables.$theme, "light"), 0.1);
-    color: rgba(map.get(variables.$theme, "light"), 1);
+    padding: 12px 24px;
+    padding-right: 48px;
+    border-radius: 20px;
+    border: 1px solid rgba(map.get(variables.$theme, "light"), 0.15);
+    background-color: rgba(map.get(variables.$theme, "light"), 0.02);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: rgba(map.get(variables.$theme, "light"), 0.8);
     font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(255,255,255,0.8)' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+
+    &:hover {
+      background-color: rgba(map.get(variables.$theme, "light"), 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: rgba(map.get(variables.$theme, "primary"), 0.4);
+      background-color: rgba(map.get(variables.$theme, "primary"), 0.3);
+    }
+
+    option {
+      background-color: map.get(variables.$theme, "dark");
+      color: rgba(map.get(variables.$theme, "light"), 0.8);
+      padding: 12px;
+    }
   }
 }
 
@@ -62,6 +101,8 @@
 
   label {
     font-size: 14px;
-    color: rgba(map.get(variables.$theme, "light"), 1);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(map.get(variables.$theme, "light"), 0.8);
   }
 }

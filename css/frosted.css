@@ -122,11 +122,11 @@ meter {
 }
 
 .bg-black {
-  background-color: #1a1a2e;
+  background-color: #131313;
 }
 
 .text-black {
-  color: #1a1a2e;
+  color: #131313;
 }
 
 .bg-gray {
@@ -747,7 +747,7 @@ meter {
 }
 
 .border-black {
-  border-color: #1a1a2e;
+  border-color: #131313;
 }
 
 .border-gray {
@@ -818,6 +818,9 @@ meter {
 .btn-primary:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+.btn-primary:focus {
+  outline: none;
+}
 
 .btn-success {
   appearance: none;
@@ -839,6 +842,9 @@ meter {
 .btn-success:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+.btn-success:focus {
+  outline: none;
+}
 
 .btn-error {
   appearance: none;
@@ -859,6 +865,9 @@ meter {
 }
 .btn-error:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+.btn-error:focus {
+  outline: none;
 }
 
 .container {
@@ -992,8 +1001,12 @@ meter {
 .form-container {
   max-width: 50%;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 24px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .form-group {
@@ -1003,32 +1016,64 @@ meter {
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
-  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
 }
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
+  letter-spacing: 2px;
+}
+.form-group input:hover,
+.form-group textarea:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: rgba(126, 168, 232, 0.5);
-  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(126, 168, 232, 0.4);
+  background-color: rgba(126, 168, 232, 0.3);
 }
 .form-group select {
+  appearance: none;
+  -webkit-appearance: none;
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  padding: 12px 24px;
+  padding-right: 48px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(255,255,255,0.8)' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+}
+.form-group select:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.form-group select:focus {
+  outline: none;
+  border-color: rgba(126, 168, 232, 0.4);
+  background-color: rgba(126, 168, 232, 0.3);
+}
+.form-group select option {
+  background-color: #131313;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px;
 }
 
 .choice-group {
@@ -1046,7 +1091,119 @@ meter {
 }
 .choice-group label {
   font-size: 14px;
-  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+form .dropdown {
+  display: block;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+form .dropdown-toggle {
+  width: 100%;
+}
+.dropdown-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.dropdown-toggle:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+.dropdown-toggle:focus-visible {
+  outline: none;
+}
+.dropdown-toggle::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(255, 255, 255, 0.8);
+  transition: transform 0.2s ease;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  min-width: 200px;
+  padding: 4px 0;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 100;
+  list-style: none;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 24px;
+  margin: 4px 8px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.15s ease;
+}
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 8px 0;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown.open .dropdown-toggle::after,
+.dropdown:focus-within .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+.dropdown.open .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 h1 {
@@ -1102,6 +1259,8 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: #FFFFFF;
+  min-height: 100vh;
+  background: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920&q=80") no-repeat center center/cover fixed;
 }
 
 p {
@@ -1142,6 +1301,94 @@ button {
 }
 button:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+button:focus {
+  outline: none;
+}
+
+form {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+form input:hover,
+form textarea:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: rgba(126, 168, 232, 0.4);
+  background-color: rgba(126, 168, 232, 0.3);
+}
+form input[type=checkbox],
+form input[type=radio] {
+  appearance: revert;
+  width: auto;
+  height: auto;
+  margin-right: 8px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+form select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 12px 24px;
+  padding-right: 48px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(255,255,255,0.8)' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+}
+form select:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+form select:focus {
+  outline: none;
+  border-color: rgba(126, 168, 232, 0.4);
+  background-color: rgba(126, 168, 232, 0.3);
+}
+form select option {
+  background-color: #131313;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px;
 }
 
 /*# sourceMappingURL=frosted.css.map */

@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frosted CSS Framework</title>
     <link rel="stylesheet" href="../css/frosted.css" />
-    <style>
-      body {
-        min-height: 100vh;
-        background: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920&q=80") no-repeat
-          center center / cover fixed;
-      }
-    </style>
   </head>
   <body>
     <div>
@@ -72,39 +65,42 @@
       <!-- Forms & Inputs -->
       <section>
         <h2>Forms &amp; Inputs</h2>
-        <form class="form-container">
+        <form>
           <div>
-            <div class="form-group">
+            <div>
               <label for="text-input">Text Input</label>
               <input type="text" id="text-input" placeholder="Enter text..." />
             </div>
-            <div class="form-group">
+            <div>
               <label for="email-input">Email</label>
               <input type="email" id="email-input" placeholder="email@example.com" />
             </div>
           </div>
           <div>
-            <div class="form-group">
+            <div>
               <label for="password-input">Password</label>
               <input type="password" id="password-input" placeholder="••••••••" />
             </div>
-            <div class="form-group">
+            <div>
               <label for="select-input">Select</label>
-              <select id="select-input">
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-              </select>
+              <div class="dropdown">
+                <button type="button" class="dropdown-toggle" tabindex="0">Option 1</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Option 1</a></li>
+                  <li><a class="dropdown-item" href="#">Option 2</a></li>
+                  <li><a class="dropdown-item" href="#">Option 3</a></li>
+                </ul>
+              </div>
             </div>
           </div>
           <div>
-            <div class="form-group">
+            <div>
               <label for="textarea-input">Textarea</label>
               <textarea id="textarea-input" rows="3" placeholder="Write something..."></textarea>
             </div>
           </div>
           <div>
-            <div class="choice-group">
+            <div>
               <div>
                 <label><input type="checkbox" name="interests" /> checkbox 1</label>
               </div>
@@ -116,7 +112,7 @@
               </div>
             </div>
 
-            <div class="choice-group">
+            <div>
               <div>
                 <label><input type="radio" name="habits" /> radio 1</label>
               </div>
