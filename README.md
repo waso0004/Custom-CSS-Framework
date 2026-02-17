@@ -1,6 +1,6 @@
 # Frosted
 
-A lightweight, class-based CSS framework built with Sass. Frosted gives your UI a frosted glass aesthetic with semi-transparent backgrounds, soft borders, and backdrop blur. All styling is applied through classes, and every design token is driven by Sass variable maps so you can customize colors, spacing, typography, and more.
+A lightweight, class-based CSS framework built with Sass. Frosted gives your UI a frosted glass look using semi-transparent backgrounds, soft borders, and backdrop blur. All styling is applied through classes, and every design token is driven by Sass variable maps for easy customization.
 
 ---
 
@@ -26,17 +26,25 @@ A lightweight, class-based CSS framework built with Sass. Frosted gives your UI 
 
 ## Usage
 
-Frosted is class-based. Add the provided classes to your HTML elements to apply styles.
+Frosted is class-based. Apply the provided classes to your HTML elements to style them.
 
-### Components
+### Headings
 
-**Headings** use `.h1` through `.h6`:
+Use `.h1` through `.h6` to style heading elements:
+
 ```html
 <h1 class="h1">Page Title</h1>
 <h2 class="h2">Section Title</h2>
+<h3 class="h3">Subsection</h3>
+<h4 class="h4">Small Heading</h4>
+<h5 class="h5">Smaller Heading</h5>
+<h6 class="h6">Smallest Heading</h6>
 ```
 
-**Buttons** use `.btn` with optional color variants:
+### Buttons
+
+Use `.btn` for the default button style. Add `.btn-primary`, `.btn-success`, or `.btn-error` for color variants:
+
 ```html
 <button class="btn">Default</button>
 <button class="btn btn-primary">Primary</button>
@@ -44,18 +52,59 @@ Frosted is class-based. Add the provided classes to your HTML elements to apply 
 <button class="btn btn-error">Error</button>
 ```
 
-**Forms** can use the `.form` wrapper, which auto-styles child labels, inputs, and selects. You can also use standalone classes like `.form-group`, `.form-label`, `.form-control`, `.form-select`, `.form-check`, `.form-check-input`, and `.form-check-label`:
+### Forms
+
+The `.form` wrapper auto-styles child labels, inputs, textareas, and selects. Checkboxes and radios keep their native appearance. Use `.form-group` to group a label and input together:
+
 ```html
 <form class="form">
   <div class="form-group">
     <label>Email</label>
     <input type="email" placeholder="you@example.com" />
   </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" placeholder="Enter password..." />
+  </div>
+  <div class="form-group">
+    <label>Message</label>
+    <textarea placeholder="Write something..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Role</label>
+    <select>
+      <option>Developer</option>
+      <option>Designer</option>
+    </select>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="terms" />
+    <label class="form-check-label" for="terms">I agree</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="plan" id="free" />
+    <label class="form-check-label" for="free">Free</label>
+  </div>
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 ```
 
-**Tables** use `.table` with optional `.table-frosted`, `.table-striped`, and `.table-hover`:
+You can also use standalone classes outside the `.form` wrapper:
+
+| Class | Description |
+|---|---|
+| `.form-group` | Groups a label and input with bottom margin |
+| `.form-label` | Styles a label |
+| `.form-control` | Styles a text input or textarea |
+| `.form-select` | Styles a select dropdown |
+| `.form-check` | Wraps a checkbox or radio with its label |
+| `.form-check-input` | Styles a checkbox or radio input |
+| `.form-check-label` | Styles the label next to a checkbox or radio |
+
+### Tables
+
+Use `.table` for base table styling. Add `.table-frosted` for the glass effect, `.table-striped` for alternating row backgrounds, and `.table-hover` for hover highlights:
+
 ```html
 <table class="table table-frosted table-striped table-hover">
   <thead>
@@ -63,60 +112,192 @@ Frosted is class-based. Add the provided classes to your HTML elements to apply 
   </thead>
   <tbody>
     <tr><td>Alice</td><td>Developer</td></tr>
+    <tr><td>Bob</td><td>Designer</td></tr>
   </tbody>
 </table>
 ```
 
-**Lists** use `.list` with `.list-item`, `.list-unordered`, `.list-ordered`, `.list-term`, and `.list-detail`.
+### Lists
 
-**Links** use `.link`. **Code** uses `.code`, `.kbd`, `.samp`, and `.pre`.
+Use `.list` as the base, then add a type class and `.list-item` for each entry:
+
+```html
+<ul class="list list-unordered">
+  <li class="list-item">First item</li>
+  <li class="list-item">Second item</li>
+</ul>
+
+<ol class="list list-ordered">
+  <li class="list-item">Step one</li>
+  <li class="list-item">Step two</li>
+</ol>
+
+<dl class="list">
+  <dt class="list-term">Term</dt>
+  <dd class="list-detail">Definition of the term</dd>
+</dl>
+```
+
+### Links
+
+Use `.link` to style anchor elements:
+
+```html
+<a class="link" href="#">Read more</a>
+```
+
+### Code
+
+Use `.code`, `.kbd`, and `.samp` for inline code elements. Use `.pre` for code blocks. When `.code` is nested inside `.pre`, its background and border are removed automatically:
+
+```html
+<p>Run <code class="code">npm install</code> to get started.</p>
+<p>Press <kbd class="kbd">Ctrl + C</kbd> to copy.</p>
+
+<pre class="pre"><code class="code">const x = 42;
+console.log(x);</code></pre>
+```
 
 ### Grid
 
-The grid uses `.container`, `.row`, and `.col-1` through `.col-12`. Use `.col` for equal-width columns or `.col-auto` for content-sized columns:
+Use `.container`, `.row`, and `.col-1` through `.col-12` for a 12-column layout. Columns stack to full width below 768px. Use `.col` for equal-width columns or `.col-auto` for content-sized columns:
+
 ```html
 <div class="container">
   <div class="row">
     <div class="col-6">Half</div>
     <div class="col-6">Half</div>
   </div>
+  <div class="row">
+    <div class="col">Equal</div>
+    <div class="col">Equal</div>
+    <div class="col">Equal</div>
+  </div>
+  <div class="row">
+    <div class="col-auto">Fits content</div>
+    <div class="col">Takes remaining space</div>
+  </div>
 </div>
 ```
 
 ### Utility Classes
 
+#### Color
+
 | Class | Description |
 |---|---|
-| `.text-{color}` | Text color (e.g. `.text-white`, `.text-blue`) |
-| `.bg-{color}` | Background color with frosted glass effect (e.g. `.bg-black`, `.bg-purple`) |
-| `.fw-{weight}` | Font weight (e.g. `.fw-bold`, `.fw-light`) |
-| `.text-{size}` | Font size (e.g. `.text-sm`, `.text-lg`, `.text-3xl`) |
-| `.m-{n}`, `.mt-{n}`, `.mr-{n}`, `.mb-{n}`, `.ml-{n}`, `.mx-{n}`, `.my-{n}` | Margin, 0 to 8 |
-| `.p-{n}`, `.pt-{n}`, `.pr-{n}`, `.pb-{n}`, `.pl-{n}`, `.px-{n}`, `.py-{n}` | Padding, 0 to 8 |
-| `.border`, `.border-{n}` | Border width |
-| `.border-{color}` | Border color |
-| `.rounded-{size}` | Border radius (`0`, `sm`, `md`, `full`) |
-| `.blur-{n}` | Backdrop blur (0 to 3) |
-| `.opacity-{n}` | Opacity |
-| `.tracking-{n}` | Letter spacing |
-| `.leading-{n}` | Line height (`tight`, `normal`) |
-| `.max-w-{size}` | Max width (`sm`, `md`, `lg`) |
-| `.mx-auto` | Center horizontally |
+| `.text-{color}` | Sets text color. Available colors: `white`, `black`, `gray`, `blue`, `green`, `red`, `purple`, `pink`, `yellow` |
+| `.bg-{color}` | Sets a semi-transparent background with backdrop blur. Same color options as above |
+
+#### Typography
+
+| Class | Description |
+|---|---|
+| `.text-{size}` | Sets font size. Sizes: `sm` (12px), `base` (14px), `md` (16px), `lg` (24px), `xl` (36px), `2xl` (48px), `3xl` (64px) |
+| `.fw-{weight}` | Sets font weight. Weights: `light` (300), `regular` (400), `medium` (500), `bold` (700) |
+| `.tracking-{n}` | Sets letter spacing. Values: `0` (0), `1` (1px), `2` (2px) |
+| `.leading-{n}` | Sets line height. Values: `tight` (1.2), `normal` (1.5) |
+| `.max-w-{size}` | Sets max width. Sizes: `sm` (50%), `md` (800px), `lg` (1200px) |
+
+#### Spacing
+
+Margin and padding utilities use a scale from `0` to `8` (0px, 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px).
+
+| Class | Description |
+|---|---|
+| `.m-{n}` | Margin on all sides |
+| `.mt-{n}`, `.mr-{n}`, `.mb-{n}`, `.ml-{n}` | Margin on a single side |
+| `.mx-{n}` | Horizontal margin |
+| `.my-{n}` | Vertical margin |
+| `.mx-auto` | Centers an element horizontally |
+| `.p-{n}` | Padding on all sides |
+| `.pt-{n}`, `.pr-{n}`, `.pb-{n}`, `.pl-{n}` | Padding on a single side |
+| `.px-{n}` | Horizontal padding |
+| `.py-{n}` | Vertical padding |
+
+#### Border
+
+| Class | Description |
+|---|---|
+| `.border` | Adds a 1px solid border |
+| `.border-{n}` | Sets border width. Values: `0`, `1` (1px), `2` (2px), `3` (3px), `4` (4px) |
+| `.border-none` | Removes the border |
+| `.border-{color}` | Sets border color. Same color options as `.text-{color}` |
+| `.rounded-{size}` | Sets border radius. Sizes: `0` (0), `sm` (8px), `md` (20px), `full` (9999px) |
+
+#### Effects
+
+| Class | Description |
+|---|---|
+| `.blur-{n}` | Sets backdrop blur. Values: `0` (0px), `1` (2px), `2` (4px), `3` (8px) |
+| `.opacity-{n}` | Sets opacity. Values: `0`, `2`, `4`, `5`, `8`, `10`, `15`, `20`, `30`, `40`, `75`, `80`, `90`, `100` |
 
 ---
 
 ## Customization
 
-All design tokens live in Sass maps under `src/variables/`. To customize the framework, edit the maps and recompile with `sass src/frosted.scss css/frosted.css`.
+All design tokens live in Sass maps under `src/variables/`. Edit the maps and recompile with `sass src/frosted.scss css/frosted.css` to apply your changes. Adding or removing entries from a map automatically updates the generated classes.
 
-**Colors** are defined in `$colors` inside `src/variables/_colors.scss`. To add a new color, add an entry like `'orange': #ffa726` to the map. This generates `.text-orange`, `.bg-orange`, and `.border-orange` utilities automatically.
+### Colors
 
-**Theme colors** are defined in `$theme` in the same file. They map semantic names to color values, for example `'primary': map.get($colors, 'blue')`. To change the primary color, point it to a different value from `$colors` or any hex color.
+Defined in `$colors` inside `src/variables/_colors.scss`. Each entry generates `.text-{name}`, `.bg-{name}`, and `.border-{name}` utilities. To add a color, insert a new entry like `'orange': #ffa726`.
 
-**Font sizes** are in `$font-sizes` inside `src/variables/_typography.scss`. Each entry like `'lg': 24px` generates a `.text-lg` utility class. Add or change entries to create new sizes.
+### Theme Colors
 
-**Spacing** is in `$spacing` inside `src/variables/_spacing.scss`. The scale runs from `'0': 0` to `'8': 64px` and drives all margin and padding utilities.
+Defined in `$theme` inside `src/variables/_colors.scss`. These map semantic names to values from `$colors` and are used by button variants. For example, `'primary': map.get($colors, 'blue')` controls `.btn-primary`. Change it to any color value.
 
-**Font weights** are in `$font-weights` inside `src/variables/_font-weight.scss`. Each entry like `'bold': 700` generates a `.fw-bold` utility.
+### Opacity
 
-**Border and blur** values are in `src/variables/_border.scss`. The `$border-radius` map controls `.rounded-{size}` classes, and `$blur` controls `.blur-{n}` classes.
+Defined in `$opacity` inside `src/variables/_colors.scss`. Each entry generates an `.opacity-{n}` utility class. The values are also used internally for semi-transparent backgrounds and borders across all components.
+
+### Font Families
+
+Defined in `$fonts` inside `src/variables/_typography.scss`. The map has three keys: `'body'` for general text, `'heading'` for headings, and `'code'` for code elements. Change any value to use a different font family.
+
+### Font Sizes
+
+Defined in `$font-sizes` inside `src/variables/_typography.scss`. Each entry generates a `.text-{name}` utility. The map includes general sizes (`sm`, `base`, `md`, `lg`, `xl`, `2xl`, `3xl`) and heading sizes (`h1` through `h6`).
+
+### Letter Spacing
+
+Defined in `$letter-spacing` inside `src/variables/_typography.scss`. Each entry generates a `.tracking-{n}` utility.
+
+### Line Height
+
+Defined in `$line-height` inside `src/variables/_typography.scss`. Each entry generates a `.leading-{name}` utility.
+
+### Max Widths
+
+Defined in `$max-widths` inside `src/variables/_typography.scss`. Each entry generates a `.max-w-{name}` utility. The `lg` value also controls the `.container` max width.
+
+### Breakpoints
+
+Defined in `$breakpoints` inside `src/variables/_typography.scss`. The `md` breakpoint (768px) is used by the grid to stack columns on smaller screens.
+
+### Spacing
+
+Defined in `$spacing` inside `src/variables/_spacing.scss`. The scale runs from `'0': 0` to `'8': 64px` and drives all margin and padding utility classes.
+
+### Margin
+
+Defined in `$margin` inside `src/variables/_margin.scss`. Uses the same scale as spacing and is referenced by components for internal margin values.
+
+### Padding
+
+Defined in `$padding` inside `src/variables/_padding.scss`. Uses the same scale as spacing and is referenced by components for internal padding values.
+
+### Font Weights
+
+Defined in `$font-weights` inside `src/variables/_font-weight.scss`. Each entry generates a `.fw-{name}` utility. Default values: `'light': 300`, `'regular': 400`, `'medium': 500`, `'bold': 700`.
+
+### Border Widths
+
+Defined in `$border-widths` inside `src/variables/_border.scss`. Each entry generates a `.border-{n}` utility.
+
+### Border Radius
+
+Defined in `$border-radius` inside `src/variables/_border.scss`. Each entry generates a `.rounded-{name}` utility. Also used by components for their default border radius.
+
+### Blur
+
+Defined in `$blur` inside `src/variables/_border.scss`. Each entry generates a `.blur-{n}` utility. The `'1'` value (2px) is the default blur used across all frosted glass components.
