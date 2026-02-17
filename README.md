@@ -41,6 +41,15 @@ Use `.h1` through `.h6` to style heading elements:
 <h6 class="h6">Smallest Heading</h6>
 ```
 
+| Class | Description |
+|---|---|
+| `.h1` | Heading size 2.5rem |
+| `.h2` | Heading size 2rem |
+| `.h3` | Heading size 1.75rem |
+| `.h4` | Heading size 1.5rem |
+| `.h5` | Heading size 1.25rem |
+| `.h6` | Heading size 1rem |
+
 ### Buttons
 
 Use `.btn` for the default button style. Add `.btn-primary`, `.btn-success`, or `.btn-error` for color variants:
@@ -51,6 +60,13 @@ Use `.btn` for the default button style. Add `.btn-primary`, `.btn-success`, or 
 <button class="btn btn-success">Success</button>
 <button class="btn btn-error">Error</button>
 ```
+
+| Class | Description |
+|---|---|
+| `.btn` | Default frosted button |
+| `.btn-primary` | Blue background variant |
+| `.btn-success` | Green background variant |
+| `.btn-error` | Red background variant |
 
 ### Forms
 
@@ -117,6 +133,13 @@ Use `.table` for base table styling. Add `.table-frosted` for the glass effect, 
 </table>
 ```
 
+| Class | Description |
+|---|---|
+| `.table` | Base table styling with spacing and borders |
+| `.table-frosted` | Adds frosted glass background and border |
+| `.table-striped` | Alternating row background colors |
+| `.table-hover` | Highlight rows on hover |
+
 ### Lists
 
 Use `.list` as the base, then add a type class and `.list-item` for each entry:
@@ -138,6 +161,15 @@ Use `.list` as the base, then add a type class and `.list-item` for each entry:
 </dl>
 ```
 
+| Class | Description |
+|---|---|
+| `.list` | Base list styling |
+| `.list-item` | Styles a list item |
+| `.list-unordered` | Disc bullet style |
+| `.list-ordered` | Decimal numbered style |
+| `.list-term` | Bold term in a definition list |
+| `.list-detail` | Definition text in a definition list |
+
 ### Links
 
 Use `.link` to style anchor elements:
@@ -145,6 +177,10 @@ Use `.link` to style anchor elements:
 ```html
 <a class="link" href="#">Read more</a>
 ```
+
+| Class | Description |
+|---|---|
+| `.link` | Blue underlined link with hover opacity |
 
 ### Code
 
@@ -157,6 +193,13 @@ Use `.code`, `.kbd`, and `.samp` for inline code elements. Use `.pre` for code b
 <pre class="pre"><code class="code">const x = 42;
 console.log(x);</code></pre>
 ```
+
+| Class | Description |
+|---|---|
+| `.code` | Inline code with frosted background |
+| `.kbd` | Keyboard input styling |
+| `.samp` | Sample output styling |
+| `.pre` | Preformatted code block with backdrop blur |
 
 ### Grid
 
@@ -179,6 +222,14 @@ Use `.container`, `.row`, and `.col-1` through `.col-12` for a 12-column layout.
   </div>
 </div>
 ```
+
+| Class | Description |
+|---|---|
+| `.container` | Centered wrapper with max width 1200px |
+| `.row` | Flex container for columns |
+| `.col-1` to `.col-12` | Fixed-width column (1/12 to 12/12) |
+| `.col` | Equal-width flexible column |
+| `.col-auto` | Column sized to its content |
 
 ### Utility Classes
 
