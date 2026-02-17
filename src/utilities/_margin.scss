@@ -1,6 +1,6 @@
 @use '../variables/index' as variables;
 
-// Margin utilities
+// Margin
 @each $name, $size in variables.$spacing {
     .m-#{$name} {
         margin: $size;

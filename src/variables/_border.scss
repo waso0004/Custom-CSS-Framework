@@ -5,3 +5,17 @@ $border-widths: (
     '3': 3px,
     '4': 4px,
 );
+
+$border-radius: (
+    '0': 0,
+    'sm': 8px,
+    'md': 20px,
+    'full': 9999px,
+);
+
+$blur: (
+    '0': 0px,
+    '1': 2px,
+    '2': 4px,
+    '3': 8px,
+);

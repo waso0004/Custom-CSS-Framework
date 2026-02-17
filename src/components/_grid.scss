@@ -1,33 +1,40 @@
+@use 'sass:map';
+@use '../variables/index' as variables;
+
+// Grid
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: map.get(variables.$max-widths, 'lg');
   margin-inline: auto;
-  padding-inline: 1rem;
+  padding-inline: map.get(variables.$padding, '4');
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-inline: -0.5rem;
+  margin-inline: -(map.get(variables.$margin, '2'));
 }
 
-// Generate .col-1 through .col-12
 @for $i from 1 through 12 {
   .col-#{$i} {
     flex: 0 0 auto;
     width: calc(100% / 12 * $i);
-    padding-inline: 0.5rem;
+    padding-inline: map.get(variables.$padding, '2');
   }
 }
 
-// Auto-width column
 .col {
   flex: 1 0 0%;
-  padding-inline: 0.5rem;
+  padding-inline: map.get(variables.$padding, '2');
 }
 
-// Responsive
-@media (max-width: 768px) {
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  padding-inline: map.get(variables.$padding, '2');
+}
+
+@media (max-width: map.get(variables.$breakpoints, 'md')) {
   @for $i from 1 through 12 {
     .col-#{$i} {
       width: 100%;

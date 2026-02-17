@@ -1,57 +1,54 @@
 @use "sass:map";
 @use "../variables/index" as variables;
 
-// Base table class — user applies .table to opt in
+// Table
 .table {
-  max-width: 800px;
+  max-width: map.get(variables.$max-widths, 'md');
   width: 100%;
-  margin: 0 auto;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-family: map.get(variables.$fonts, "body");
   font-size: map.get(variables.$font-sizes, "md");
-  margin-bottom: map.get(variables.$spacing, "4");
-  color: map.get(variables.$colors, "white");
+  margin-bottom: map.get(variables.$margin, '4');
+  color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '80'));
 
   thead {
-    background-color: rgba(map.get(variables.$colors, "blue"), 0.3);
+    background-color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '5'));
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: map.get(variables.$padding, '3') map.get(variables.$padding, '5');
+    border-bottom: map.get(variables.$border-widths, '1') solid rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '15'));
   }
 
   th {
-    text-align: left;
     font-weight: map.get(variables.$font-weights, "bold");
-    padding: map.get(variables.$spacing, "3");
-    border: 0.5px solid rgba(map.get(variables.$colors, "white"), 0.15);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 14px;
   }
 
-  td {
-    padding: map.get(variables.$spacing, "3");
-    border: 0.5px solid rgba(map.get(variables.$colors, "white"), 0.15);
+  tbody tr:last-child td {
+    border-bottom: none;
   }
 }
 
-// Frosted glass table variant
 .table-frosted {
-  background-color: rgba(map.get(variables.$colors, "white"), 0.02);
-  border: 1px solid rgba(map.get(variables.$colors, "white"), 0.15);
-  border-radius: 20px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background-color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '2'));
+  border: map.get(variables.$border-widths, '1') solid rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '15'));
+  border-radius: map.get(variables.$border-radius, 'md');
+  backdrop-filter: blur(map.get(variables.$blur, '1'));
+  -webkit-backdrop-filter: blur(map.get(variables.$blur, '1'));
   overflow: hidden;
 }
 
-// Striped rows
 .table-striped {
   tbody tr:nth-child(odd) {
-    background-color: rgba(map.get(variables.$colors, "white"), 0.04);
+    background-color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '4'));
   }
 }
 
-// Hoverable rows
 .table-hover {
   tbody tr:hover {
-    background-color: rgba(map.get(variables.$colors, "white"), 0.1);
+    background-color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '10'));
   }
 }

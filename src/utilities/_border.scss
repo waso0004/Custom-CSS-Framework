@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../variables/index' as variables;
 
-// Border width utilities
+// Border widths
 @each $name, $width in variables.$border-widths {
     .border-#{$name} {
         border-width: $width;
@@ -10,37 +10,38 @@
 }
 
 .border {
-    border: 1px solid;
+    border: map.get(variables.$border-widths, '1') solid;
 }
 
 .border-none {
     border: none;
 }
 
-// Border color utilities
+// Border colors
 @each $color-name, $color-value in variables.$colors {
     .border-#{$color-name} {
         border-color: $color-value;
     }
 }
 
-// Border radius utilities
-.rounded-none {
-    border-radius: 0;
+// Border radius
+@each $name, $radius in variables.$border-radius {
+    .rounded-#{$name} {
+        border-radius: $radius;
+    }
 }
 
-.rounded-sm {
-    border-radius: 4px;
+// Blur
+@each $name, $value in variables.$blur {
+    .blur-#{$name} {
+        backdrop-filter: blur($value);
+        -webkit-backdrop-filter: blur($value);
+    }
 }
 
-.rounded {
-    border-radius: 8px;
-}
-
-.rounded-lg {
-    border-radius: 16px;
-}
-
-.rounded-full {
-    border-radius: 9999px;
+// Opacity
+@each $name, $value in variables.$opacity {
+    .opacity-#{$name} {
+        opacity: $value;
+    }
 }

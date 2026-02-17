@@ -1,6 +1,6 @@
 @use '../variables/index' as variables;
 
-// Font weight utilities
+// Font weights
 @each $name, $weight in variables.$font-weights {
     .fw-#{$name} {
         font-weight: $weight;

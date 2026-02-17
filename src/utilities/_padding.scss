@@ -1,6 +1,6 @@
 @use '../variables/index' as variables;
 
-// Padding utilities
+// Padding
 @each $name, $size in variables.$spacing {
     .p-#{$name} {
         padding: $size;

@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frosted CSS Framework - Full Showcase</title>
+    <link rel="stylesheet" href="../css/frosted.css" />
+  </head>
+  <body>
+
+    <!-- Grid layout -->
+    <div class="container p-5 text-white">
+
+      <!-- Headings -->
+      <section class="mb-6">
+        <h1 class="h1">Frosted CSS Framework</h1>
+        <p>A full showcase of every feature the framework offers.</p>
+      </section>
+
+      <!-- Typography -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Typography</h2>
+        <div class="row">
+          <div class="col-6">
+            <h1 class="h1">Heading 1</h1>
+            <h2 class="h2">Heading 2</h2>
+            <h3 class="h3">Heading 3</h3>
+            <h4 class="h4">Heading 4</h4>
+            <h5 class="h5">Heading 5</h5>
+            <h6 class="h6">Heading 6</h6>
+          </div>
+          <div class="col-6">
+            <p class="mb-4">This is a standard paragraph with default styling.</p>
+            <p class="mb-4">Here is a <a href="#" class="link">link inside a paragraph</a> showing anchor styles.</p>
+            <p class="text-gray mb-4">This paragraph uses <span class="code">.text-gray</span> for muted text.</p>
+            <p class="fw-bold mb-4">This paragraph uses <span class="code">.fw-bold</span> for emphasis.</p>
+            <p class="text-sm mb-4">Small text with <span class="code">.text-sm</span></p>
+            <p class="text-base mb-4">Base text with <span class="code">.text-base</span></p>
+            <p class="text-lg mb-4">Large text with <span class="code">.text-lg</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Letter Spacing and Line Height -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Letter Spacing &amp; Line Height</h2>
+        <div class="row">
+          <div class="col-6">
+            <h4 class="h4 mb-3">Letter Spacing</h4>
+            <p class="tracking-0 mb-2">tracking-0 (0px)</p>
+            <p class="tracking-1 mb-2">tracking-1 (1px)</p>
+            <p class="tracking-2 mb-2">tracking-2 (2px)</p>
+          </div>
+          <div class="col-6">
+            <h4 class="h4 mb-3">Line Height</h4>
+            <p class="leading-tight mb-3">leading-tight (1.2) - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+            <p class="leading-normal mb-3">leading-normal (1.5) - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Code -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Code</h2>
+        <p class="mb-4">Inline code: <span class="code">const x = 42;</span></p>
+        <p class="mb-4">Keyboard input: <span class="kbd">Ctrl + S</span></p>
+        <p class="mb-4">Sample output: <span class="samp">Error: file not found</span></p>
+        <div class="pre"><span class="code">function greet(name) {
+  return `Hello, ${name}!`;
+}</span></div>
+      </section>
+
+      <!-- Lists -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Lists</h2>
+        <div class="row">
+          <div class="col-4">
+            <h4 class="h4">Unordered List</h4>
+            <ul class="list list-unordered">
+              <li class="list-item">Item one</li>
+              <li class="list-item">Item two</li>
+              <li class="list-item">
+                Item three
+                <ul class="list list-unordered">
+                  <li class="list-item">Nested item</li>
+                  <li class="list-item">Nested item</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <h4 class="h4">Ordered List</h4>
+            <ol class="list list-ordered">
+              <li class="list-item">First item</li>
+              <li class="list-item">Second item</li>
+              <li class="list-item">Third item</li>
+            </ol>
+          </div>
+          <div class="col-4">
+            <h4 class="h4">Definition List</h4>
+            <dl class="list">
+              <dt class="list-term">HTML</dt>
+              <dd class="list-detail">HyperText Markup Language</dd>
+              <dt class="list-term">CSS</dt>
+              <dd class="list-detail">Cascading Style Sheets</dd>
+              <dt class="list-term">JS</dt>
+              <dd class="list-detail">JavaScript</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Buttons -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Buttons</h2>
+        <div class="row">
+          <div class="col-auto">
+            <button class="btn">Btn</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn-primary">Primary</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn-success">Success</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn-error">Error</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Forms -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Forms</h2>
+        <div class="form">
+          <div class="form-group">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" placeholder="Enter username..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" id="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="pass">Password</label>
+            <input class="form-control" type="password" id="pass" placeholder="••••••••" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bio">Bio</label>
+            <textarea class="form-control" id="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="role">Role</label>
+            <select class="form-select" id="role">
+              <option value="" disabled selected>Choose a role...</option>
+              <option value="dev">Developer</option>
+              <option value="design">Designer</option>
+              <option value="pm">Manager</option>
+            </select>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms" />
+            <label class="form-check-label" for="terms">I agree to the terms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="plan" id="free" />
+            <label class="form-check-label" for="free">Free Plan</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="plan" id="pro" />
+            <label class="form-check-label" for="pro">Pro Plan</label>
+          </div>
+          <button class="btn-primary mt-4">Submit</button>
+        </div>
+      </section>
+
+      <!-- Tables -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Tables</h2>
+        <table class="table table-frosted table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Project</th>
+              <th>Status</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Website Redesign</td>
+              <td>In Progress</td>
+              <td>Mar 2026</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mobile App</td>
+              <td>Planning</td>
+              <td>Jun 2026</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>API Integration</td>
+              <td>Complete</td>
+              <td>Jan 2026</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Documentation</td>
+              <td>In Progress</td>
+              <td>Apr 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Color utilities -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Color Utilities</h2>
+        <h4 class="h4 mb-3">Text Colors</h4>
+        <div class="row mb-4">
+          <div class="col"><p class="text-white">white</p></div>
+          <div class="col"><p class="text-gray">gray</p></div>
+          <div class="col"><p class="text-blue">blue</p></div>
+          <div class="col"><p class="text-green">green</p></div>
+          <div class="col"><p class="text-red">red</p></div>
+          <div class="col"><p class="text-purple">purple</p></div>
+          <div class="col"><p class="text-pink">pink</p></div>
+          <div class="col"><p class="text-yellow">yellow</p></div>
+        </div>
+        <h4 class="h4 mb-3">Background Colors</h4>
+        <div class="row">
+          <div class="col"><div class="bg-blue text-black p-3 rounded-sm mb-2">blue</div></div>
+          <div class="col"><div class="bg-green text-black p-3 rounded-sm mb-2">green</div></div>
+          <div class="col"><div class="bg-red text-black p-3 rounded-sm mb-2">red</div></div>
+          <div class="col"><div class="bg-purple text-black p-3 rounded-sm mb-2">purple</div></div>
+          <div class="col"><div class="bg-pink text-black p-3 rounded-sm mb-2">pink</div></div>
+          <div class="col"><div class="bg-yellow text-black p-3 rounded-sm mb-2">yellow</div></div>
+        </div>
+      </section>
+
+      <!-- Opacity utilities -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Opacity Utilities</h2>
+        <div class="row">
+          <div class="col"><div class="bg-blue p-3 rounded-sm mb-2 opacity-100">100</div></div>
+          <div class="col"><div class="bg-blue p-3 rounded-sm mb-2 opacity-80">80</div></div>
+          <div class="col"><div class="bg-blue p-3 rounded-sm mb-2 opacity-40">40</div></div>
+          <div class="col"><div class="bg-blue p-3 rounded-sm mb-2 opacity-20">20</div></div>
+          <div class="col"><div class="bg-blue p-3 rounded-sm mb-2 opacity-10">10</div></div>
+          <div class="col"><div class="bg-blue p-3 rounded-sm mb-2 opacity-0">0</div></div>
+        </div>
+      </section>
+
+      <!-- Blur utilities -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Blur Utilities</h2>
+        <div class="row">
+          <div class="col"><div class="border border-white p-3 rounded-sm mb-2 blur-0">blur-0</div></div>
+          <div class="col"><div class="border border-white p-3 rounded-sm mb-2 blur-1">blur-1</div></div>
+          <div class="col"><div class="border border-white p-3 rounded-sm mb-2 blur-2">blur-2</div></div>
+          <div class="col"><div class="border border-white p-3 rounded-sm mb-2 blur-3">blur-3</div></div>
+        </div>
+      </section>
+
+      <!-- Spacing utilities -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Spacing Utilities</h2>
+        <div class="row">
+          <div class="col-6">
+            <h4 class="h4 mb-3">Margin</h4>
+            <div class="bg-blue p-2 rounded-sm mb-1 blur-1">mb-1 (4px)</div>
+            <div class="bg-blue p-2 rounded-sm mb-2">mb-2 (8px)</div>
+            <div class="bg-blue p-2 rounded-sm mb-3">mb-3 (12px)</div>
+            <div class="bg-blue p-2 rounded-sm mb-4">mb-4 (16px)</div>
+            <div class="bg-blue p-2 rounded-sm">end</div>
+          </div>
+          <div class="col-6">
+            <h4 class="h4 mb-3">Padding</h4>
+            <div class="bg-purple p-1 rounded-sm mb-2">p-1</div>
+            <div class="bg-purple p-2 rounded-sm mb-2">p-2</div>
+            <div class="bg-purple p-3 rounded-sm mb-2">p-3</div>
+            <div class="bg-purple p-4 rounded-sm mb-2">p-4</div>
+            <div class="bg-purple p-5 rounded-sm mb-2">p-5</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Border utilities -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Border Utilities</h2>
+        <div class="row">
+          <div class="col">
+            <div class="border border-white p-3 mb-2 rounded-0">rounded-0</div>
+          </div>
+          <div class="col">
+            <div class="border border-white p-3 mb-2 rounded-sm">rounded-sm</div>
+          </div>
+          <div class="col">
+            <div class="border border-white p-3 mb-2 rounded-md">rounded-md</div>
+          </div>
+          <div class="col">
+            <div class="border border-white p-3 mb-2 rounded-full px-4">rounded-full</div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <div class="border-1 border-blue p-3 rounded-sm">border-blue</div>
+          </div>
+          <div class="col">
+            <div class="border-1 border-green p-3 rounded-sm">border-green</div>
+          </div>
+          <div class="col">
+            <div class="border-1 border-red p-3 rounded-sm">border-red</div>
+          </div>
+          <div class="col">
+            <div class="border-1 border-purple p-3 rounded-sm">border-purple</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Font weight utilities -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Font Weight Utilities</h2>
+        <p class="fw-light">Light (300)</p>
+        <p class="fw-regular">Regular (400)</p>
+        <p class="fw-medium">Medium (500)</p>
+        <p class="fw-bold">Bold (700)</p>
+      </section>
+
+      <!-- Max Width utilities -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Max Width Utilities</h2>
+        <div class="bg-blue p-3 rounded-sm mb-3 max-w-sm">max-w-sm (50%)</div>
+        <div class="bg-green p-3 rounded-sm mb-3 max-w-md">max-w-md (800px)</div>
+        <div class="bg-purple p-3 rounded-sm mb-3 max-w-lg">max-w-lg (1200px)</div>
+      </section>
+
+      <!-- Grid system -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Grid System</h2>
+        <div class="row mb-2">
+          <div class="col-12"><div class="bg-blue p-2 rounded-sm">col-12</div></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-6"><div class="bg-green p-2 rounded-sm">col-6</div></div>
+          <div class="col-6"><div class="bg-green p-2 rounded-sm">col-6</div></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-4"><div class="bg-purple p-2 rounded-sm">col-4</div></div>
+          <div class="col-4"><div class="bg-purple p-2 rounded-sm">col-4</div></div>
+          <div class="col-4"><div class="bg-purple p-2 rounded-sm">col-4</div></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-3"><div class="bg-pink p-2 rounded-sm">col-3</div></div>
+          <div class="col-3"><div class="bg-pink p-2 rounded-sm">col-3</div></div>
+          <div class="col-3"><div class="bg-pink p-2 rounded-sm">col-3</div></div>
+          <div class="col-3"><div class="bg-pink p-2 rounded-sm">col-3</div></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col"><div class="bg-yellow p-2 rounded-sm">auto col</div></div>
+          <div class="col"><div class="bg-yellow p-2 rounded-sm">auto col</div></div>
+          <div class="col"><div class="bg-yellow p-2 rounded-sm">auto col</div></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><div class="bg-red p-2 rounded-sm">col-8</div></div>
+          <div class="col-4"><div class="bg-red p-2 rounded-sm">col-4</div></div>
+        </div>
+      </section>
+
+      <!-- Centered content -->
+      <section class="mb-6">
+        <h2 class="h2 mb-4">Centered Content</h2>
+        <div class="bg-blue p-4 rounded-md mx-auto max-w-sm">
+          This box uses <span class="code">.mx-auto</span> and <span class="code">.max-w-sm</span> to center itself.
+        </div>
+      </section>
+
+    </div>
+  </body>
+</html>

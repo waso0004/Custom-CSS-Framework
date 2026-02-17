@@ -1,8 +1,29 @@
 @use '../variables/index' as variables;
 
-// Font size utilities
+// Font sizes
 @each $name, $size in variables.$font-sizes {
     .text-#{$name} {
         font-size: $size;
+    }
+}
+
+// Letter spacing
+@each $name, $value in variables.$letter-spacing {
+    .tracking-#{$name} {
+        letter-spacing: $value;
+    }
+}
+
+// Line height
+@each $name, $value in variables.$line-height {
+    .leading-#{$name} {
+        line-height: $value;
+    }
+}
+
+// Max width
+@each $name, $value in variables.$max-widths {
+    .max-w-#{$name} {
+        max-width: $value;
     }
 }

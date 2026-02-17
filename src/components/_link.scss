@@ -1,18 +1,16 @@
 @use "sass:map";
 @use "../variables/index" as variables;
 
-// Link defaults mixin — applied by _base.scss
-@mixin f-link {
-  a {
-    color: map.get(variables.$colors, "blue");
-    text-decoration: underline;
+// Links
+.link {
+  color: map.get(variables.$colors, "blue");
+  text-decoration: underline;
 
-    &:hover {
-      color: rgba(map.get(variables.$colors, "blue"), 0.75);
-    }
+  &:hover {
+    color: rgba(map.get(variables.$colors, "blue"), map.get(variables.$opacity, '75'));
+  }
 
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
   }
 }

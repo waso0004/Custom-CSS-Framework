@@ -1,14 +1,9 @@
 @use "sass:map";
 @use "../variables/typography" as typography;
 @use "../variables/colors" as colors;
-@use "../variables/spacing" as spacing;
 @use "../variables/font-weight" as font-weight;
-@use "../components/index" as components;
 
-// ── Reboot / Global defaults ─────────────────────────────
-// Default look applied to bare HTML elements.
-// End users can override with utility/component classes.
-
+// Body defaults
 body {
   font-family: map.get(typography.$fonts, "body");
   font-size: map.get(typography.$font-sizes, "md");
@@ -16,101 +11,4 @@ body {
   color: map.get(colors.$colors, "white");
   min-height: 100vh;
   background: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920&q=80") no-repeat center center / cover fixed;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: rgba(map.get(colors.$colors, "white"), 0.8);
-}
-
-// ── Typography defaults ─────────────────────────────────
-@include components.f-headings;
-@include components.f-lists;
-@include components.f-code;
-@include components.f-link;
-
-// ── Button default ─────────────────────────────────────
-button {
-  @include components.f-button;
-}
-
-// ── Form defaults ─────────────────────────────────────
-form {
-  max-width: 50%;
-  margin: 0;
-  padding: 24px;
-  border-radius: 20px;
-  background-color: rgba(map.get(colors.$colors, "white"), 0.02);
-  border: 1px solid rgba(map.get(colors.$colors, "white"), 0.15);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-    color: rgba(map.get(colors.$colors, "white"), 0.8);
-  }
-
-  input,
-  textarea {
-    @include components.f-input;
-    margin-bottom: 16px;
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {
-    appearance: revert;
-    width: auto;
-    height: auto;
-    margin-right: 8px;
-    margin-bottom: 0;
-    cursor: pointer;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background-color: transparent;
-    border: revert;
-    border-radius: revert;
-    padding: revert;
-  }
-
-}
-
-// ── Table defaults ────────────────────────────────────
-table {
-  max-width: 50%;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-family: map.get(typography.$fonts, "body");
-  color: rgba(map.get(colors.$colors, "white"), 0.8);
-  background-color: rgba(map.get(colors.$colors, "white"), 0.02);
-  border: 1px solid rgba(map.get(colors.$colors, "white"), 0.15);
-  border-radius: 20px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  overflow: hidden;
-
-  thead {
-    background-color: rgba(map.get(colors.$colors, "white"), 0.05);
-  }
-
-  th,
-  td {
-    text-align: left;
-    padding: 12px 24px;
-    border-bottom: 1px solid rgba(map.get(colors.$colors, "white"), 0.15);
-  }
-
-  th {
-    font-weight: map.get(font-weight.$font-weights, "bold");
-  }
-
-  tbody tr:last-child td {
-    border-bottom: none;
-  }
-
-  tbody tr:hover {
-    background-color: rgba(map.get(colors.$colors, "white"), 0.1);
-  }
 }

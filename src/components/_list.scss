@@ -1,42 +1,37 @@
 @use "sass:map";
 @use "../variables/index" as variables;
 
-// List defaults mixin — applied by _base.scss
-@mixin f-lists {
-  ul,
-  ol,
-  dl {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-    font-family: map.get(variables.$fonts, "body");
-    color: rgba(map.get(variables.$colors, "white"), 0.8);
-  }
+// Lists
+.list {
+  margin-top: map.get(variables.$margin, '0');
+  margin-bottom: map.get(variables.$margin, '4');
+  padding-left: map.get(variables.$padding, '6');
+  font-family: map.get(variables.$fonts, "body");
+  color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '80'));
+}
 
-  li {
-    line-height: 1.5;
-  }
+.list-item {
+  line-height: map.get(variables.$line-height, "normal");
+}
 
-  li ul,
-  li ol {
-    margin-bottom: 0;
-  }
+.list .list {
+  margin-bottom: map.get(variables.$margin, '0');
+}
 
-  ul {
-    list-style-type: disc;
-  }
+.list-unordered {
+  list-style-type: disc;
+}
 
-  ol {
-    list-style-type: decimal;
-  }
+.list-ordered {
+  list-style-type: decimal;
+}
 
-  dt {
-    font-weight: map.get(variables.$font-weights, "bold");
-  }
+.list-term {
+  font-weight: map.get(variables.$font-weights, "bold");
+}
 
-  dd {
-    margin-bottom: 0.5rem;
-    margin-left: 0;
-  }
+.list-detail {
+  margin-bottom: map.get(variables.$margin, '2');
+  margin-left: map.get(variables.$margin, '0');
 }
 

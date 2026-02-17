@@ -1,14 +1,16 @@
 @use 'sass:map';
 @use '../variables/index' as variables;
 
-// Background color utilities
+// Backgrounds
 @each $color-name, $color-value in variables.$colors {
     .bg-#{$color-name} {
-        background-color: $color-value;
+        background-color: rgba($color-value, map.get(variables.$opacity, '30'));
+        backdrop-filter: blur(map.get(variables.$blur, '1'));
+        -webkit-backdrop-filter: blur(map.get(variables.$blur, '1'));
     }
 }
 
-// Text color utilities
+// Text colors
 @each $color-name, $color-value in variables.$colors {
     .text-#{$color-name} {
         color: $color-value;
