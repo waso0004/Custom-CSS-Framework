@@ -2,7 +2,7 @@
 @use "../variables/index" as variables;
 
 // Table
-.table {
+table, .table {
   max-width: map.get(variables.$max-widths, 'md');
   width: 100%;
   border-collapse: separate;

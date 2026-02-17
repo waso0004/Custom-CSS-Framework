@@ -2,7 +2,7 @@
 @use "../variables/index" as variables;
 
 // Links
-.link {
+a, .link {
   color: map.get(variables.$colors, "blue");
   text-decoration: underline;
 

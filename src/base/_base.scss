@@ -2,6 +2,7 @@
 @use "../variables/typography" as typography;
 @use "../variables/colors" as colors;
 @use "../variables/font-weight" as font-weight;
+@use "../variables/margin" as margin;
 
 // Body defaults
 body {
@@ -11,4 +12,10 @@ body {
   color: map.get(colors.$colors, "white");
   min-height: 100vh;
   background: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920&q=80") no-repeat center center / cover fixed;
+}
+
+// Paragraphs
+p {
+  margin-top: map.get(margin.$margin, '0');
+  margin-bottom: map.get(margin.$margin, '4');
 }

@@ -98,7 +98,12 @@ body {
   background: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920&q=80") no-repeat center center/cover fixed;
 }
 
-.btn {
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+button, .btn {
   appearance: none;
   -webkit-appearance: none;
   display: inline-block;
@@ -115,10 +120,10 @@ body {
   cursor: pointer;
   text-transform: uppercase;
 }
-.btn:hover {
+button:hover, .btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.btn:focus {
+button:focus, .btn:focus {
   outline: none;
 }
 
@@ -328,7 +333,7 @@ body {
     width: 100%;
   }
 }
-.form {
+form, .form {
   max-width: 50%;
   padding: 24px;
   border-radius: 20px;
@@ -337,12 +342,13 @@ body {
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
 }
-.form label:not(.form-check-label) {
+form label:not(.form-check-label), .form label:not(.form-check-label) {
   display: block;
   margin-bottom: 8px;
   color: rgba(255, 255, 255, 0.8);
 }
-.form input:not([type=checkbox]):not([type=radio]),
+form input:not([type=checkbox]):not([type=radio]),
+form textarea, .form input:not([type=checkbox]):not([type=radio]),
 .form textarea {
   width: 100%;
   padding: 12px 24px;
@@ -353,25 +359,30 @@ body {
   -webkit-backdrop-filter: blur(2px);
   color: rgba(255, 255, 255, 0.8);
 }
-.form input:not([type=checkbox]):not([type=radio]):hover,
+form input:not([type=checkbox]):not([type=radio]):hover,
+form textarea:hover, .form input:not([type=checkbox]):not([type=radio]):hover,
 .form textarea:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.form input:not([type=checkbox]):not([type=radio]):focus,
+form input:not([type=checkbox]):not([type=radio]):focus,
+form textarea:focus, .form input:not([type=checkbox]):not([type=radio]):focus,
 .form textarea:focus {
   outline: none;
   border-color: rgba(126, 168, 232, 0.4);
   background-color: rgba(126, 168, 232, 0.3);
 }
-.form input:not([type=checkbox]):not([type=radio])::placeholder,
+form input:not([type=checkbox]):not([type=radio])::placeholder,
+form textarea::placeholder, .form input:not([type=checkbox]):not([type=radio])::placeholder,
 .form textarea::placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
-.form input:not([type=checkbox]):not([type=radio]),
+form input:not([type=checkbox]):not([type=radio]),
+form textarea, .form input:not([type=checkbox]):not([type=radio]),
 .form textarea {
   margin-bottom: 16px;
 }
-.form input[type=checkbox],
+form input[type=checkbox],
+form input[type=radio], .form input[type=checkbox],
 .form input[type=radio] {
   appearance: revert;
   -webkit-appearance: revert;
@@ -389,7 +400,7 @@ body {
   padding: revert;
   color: revert;
 }
-.form select {
+form select, .form select {
   width: 100%;
   padding: 12px 24px;
   border-radius: 20px;
@@ -399,18 +410,18 @@ body {
   -webkit-backdrop-filter: blur(2px);
   color: rgba(255, 255, 255, 0.8);
 }
-.form select:hover {
+form select:hover, .form select:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.form select:focus {
+form select:focus, .form select:focus {
   outline: none;
   border-color: rgba(126, 168, 232, 0.4);
   background-color: rgba(126, 168, 232, 0.3);
 }
-.form select::placeholder {
+form select::placeholder, .form select::placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
-.form select {
+form select, .form select {
   appearance: none;
   -webkit-appearance: none;
   padding-right: 48px;
@@ -420,7 +431,7 @@ body {
   background-repeat: no-repeat;
   background-position: right 24px center;
 }
-.form select option {
+form select option, .form select option {
   background-color: #131313;
   color: rgba(255, 255, 255, 0.8);
   padding: 12px;
@@ -521,6 +532,7 @@ body {
   cursor: pointer;
 }
 
+h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
   margin-bottom: 8px;
@@ -530,31 +542,31 @@ body {
   line-height: 1.2;
 }
 
-.h1 {
+h1, .h1 {
   font-size: 2.5rem;
 }
 
-.h2 {
+h2, .h2 {
   font-size: 2rem;
 }
 
-.h3 {
+h3, .h3 {
   font-size: 1.75rem;
 }
 
-.h4 {
+h4, .h4 {
   font-size: 1.5rem;
 }
 
-.h5 {
+h5, .h5 {
   font-size: 1.25rem;
 }
 
-.h6 {
+h6, .h6 {
   font-size: 1rem;
 }
 
-.list {
+ul, ol, dl, .list {
   margin-top: 0;
   margin-bottom: 16px;
   padding-left: 32px;
@@ -562,32 +574,33 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.list-item {
+li, .list-item {
   line-height: 1.5;
 }
 
+ul ul, ul ol, ol ul, ol ol,
 .list .list {
   margin-bottom: 0;
 }
 
-.list-unordered {
+ul, .list-unordered {
   list-style-type: disc;
 }
 
-.list-ordered {
+ol, .list-ordered {
   list-style-type: decimal;
 }
 
-.list-term {
+dt, .list-term {
   font-weight: 700;
 }
 
-.list-detail {
+dd, .list-detail {
   margin-bottom: 8px;
   margin-left: 0;
 }
 
-.table {
+table, .table {
   max-width: 800px;
   width: 100%;
   border-collapse: separate;
@@ -597,19 +610,20 @@ body {
   margin-bottom: 16px;
   color: rgba(255, 255, 255, 0.8);
 }
-.table thead {
+table thead, .table thead {
   background-color: rgba(255, 255, 255, 0.05);
 }
-.table th,
+table th,
+table td, .table th,
 .table td {
   text-align: left;
   padding: 12px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
-.table th {
+table th, .table th {
   font-weight: 700;
 }
-.table tbody tr:last-child td {
+table tbody tr:last-child td, .table tbody tr:last-child td {
   border-bottom: none;
 }
 
@@ -630,9 +644,8 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.code,
-.kbd,
-.samp {
+code, kbd, samp,
+.code, .kbd, .samp {
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.9);
@@ -642,7 +655,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.pre {
+pre, .pre {
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.9);
@@ -657,21 +670,21 @@ body {
   overflow-x: auto;
   white-space: pre;
 }
-.pre .code {
+pre code, pre .code, .pre code, .pre .code {
   background: none;
   border: none;
   padding: 0;
   border-radius: 0;
 }
 
-.link {
+a, .link {
   color: #7ea8e8;
   text-decoration: underline;
 }
-.link:hover {
+a:hover, .link:hover {
   color: rgba(126, 168, 232, 0.75);
 }
-.link:focus {
+a:focus, .link:focus {
   outline: none;
 }
 

@@ -1,6 +1,6 @@
 # Frosted
 
-A lightweight, class-based CSS framework built with Sass. Frosted gives your UI a frosted glass look using semi-transparent backgrounds, soft borders, and backdrop blur. All styling is applied through classes, and every design token is driven by Sass variable maps for easy customization.
+A lightweight CSS framework built with Sass. Frosted gives your UI a frosted glass look using semi-transparent backgrounds, soft borders, and backdrop blur. Standard HTML elements are styled automatically, and component classes are available for more control. Every design token is driven by Sass variable maps for easy customization.
 
 ---
 
@@ -26,11 +26,11 @@ A lightweight, class-based CSS framework built with Sass. Frosted gives your UI 
 
 ## Usage
 
-Frosted is class-based. Apply the provided classes to your HTML elements to style them.
+Frosted styles standard HTML elements automatically. You can also use component classes for more control or to apply styles to non-standard elements.
 
 ### Headings
 
-Use `.h1` through `.h6` to style heading elements:
+Bare `<h1>` through `<h6>` elements are styled by default. You can also use `.h1` through `.h6` classes:
 
 ```html
 <h1 class="h1">Page Title</h1>
@@ -52,7 +52,7 @@ Use `.h1` through `.h6` to style heading elements:
 
 ### Buttons
 
-Use `.btn` for the default button style. Add `.btn-primary`, `.btn-success`, or `.btn-error` for color variants:
+Bare `<button>` elements get the default frosted style. Use `.btn` for the same style on other elements, or add `.btn-primary`, `.btn-success`, or `.btn-error` for color variants:
 
 ```html
 <button class="btn">Default</button>
@@ -70,7 +70,7 @@ Use `.btn` for the default button style. Add `.btn-primary`, `.btn-success`, or 
 
 ### Forms
 
-The `.form` wrapper auto-styles child labels, inputs, textareas, and selects. Checkboxes and radios keep their native appearance. Use `.form-group` to group a label and input together:
+Bare `<form>` elements are styled automatically with frosted glass styling on child labels, inputs, textareas, and selects. Checkboxes and radios keep their native appearance. You can also use the `.form` class for the same effect. Use `.form-group` to group a label and input together:
 
 ```html
 <form class="form">
@@ -119,7 +119,7 @@ You can also use standalone classes outside the `.form` wrapper:
 
 ### Tables
 
-Use `.table` for base table styling. Add `.table-frosted` for the glass effect, `.table-striped` for alternating row backgrounds, and `.table-hover` for hover highlights:
+Bare `<table>` elements get base table styling. Use `.table` for the same effect on other elements. Add `.table-frosted` for the glass effect, `.table-striped` for alternating row backgrounds, and `.table-hover` for hover highlights:
 
 ```html
 <table class="table table-frosted table-striped table-hover">
@@ -142,7 +142,7 @@ Use `.table` for base table styling. Add `.table-frosted` for the glass effect, 
 
 ### Lists
 
-Use `.list` as the base, then add a type class and `.list-item` for each entry:
+Bare `<ul>`, `<ol>`, and `<dl>` elements are styled by default. You can also use `.list` as the base class, then add a type class and `.list-item` for each entry:
 
 ```html
 <ul class="list list-unordered">
@@ -172,7 +172,7 @@ Use `.list` as the base, then add a type class and `.list-item` for each entry:
 
 ### Links
 
-Use `.link` to style anchor elements:
+Bare `<a>` elements are styled with blue color and underline. You can also use `.link`:
 
 ```html
 <a class="link" href="#">Read more</a>
@@ -184,7 +184,7 @@ Use `.link` to style anchor elements:
 
 ### Code
 
-Use `.code`, `.kbd`, and `.samp` for inline code elements. Use `.pre` for code blocks. When `.code` is nested inside `.pre`, its background and border are removed automatically:
+Bare `<code>`, `<kbd>`, `<samp>`, and `<pre>` elements are styled automatically. You can also use `.code`, `.kbd`, `.samp`, and `.pre` classes. When `<code>` or `.code` is nested inside `<pre>` or `.pre`, its background and border are removed automatically:
 
 ```html
 <p>Run <code class="code">npm install</code> to get started.</p>

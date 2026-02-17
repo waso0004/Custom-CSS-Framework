@@ -2,6 +2,7 @@
 @use "../variables/index" as variables;
 
 // Headings
+h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: map.get(variables.$margin, '0');
   margin-bottom: map.get(variables.$margin, '2');
@@ -11,9 +12,9 @@
   line-height: map.get(variables.$line-height, "tight");
 }
 
-.h1 { font-size: map.get(variables.$font-sizes, "h1"); }
-.h2 { font-size: map.get(variables.$font-sizes, "h2"); }
-.h3 { font-size: map.get(variables.$font-sizes, "h3"); }
-.h4 { font-size: map.get(variables.$font-sizes, "h4"); }
-.h5 { font-size: map.get(variables.$font-sizes, "h5"); }
-.h6 { font-size: map.get(variables.$font-sizes, "h6"); }
+h1, .h1 { font-size: map.get(variables.$font-sizes, "h1"); }
+h2, .h2 { font-size: map.get(variables.$font-sizes, "h2"); }
+h3, .h3 { font-size: map.get(variables.$font-sizes, "h3"); }
+h4, .h4 { font-size: map.get(variables.$font-sizes, "h4"); }
+h5, .h5 { font-size: map.get(variables.$font-sizes, "h5"); }
+h6, .h6 { font-size: map.get(variables.$font-sizes, "h6"); }

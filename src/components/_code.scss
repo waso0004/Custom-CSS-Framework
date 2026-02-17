@@ -2,9 +2,8 @@
 @use "../variables/index" as variables;
 
 // Inline code
-.code,
-.kbd,
-.samp {
+code, kbd, samp,
+.code, .kbd, .samp {
   font-family: map.get(variables.$fonts, "code");
   font-size: map.get(variables.$font-sizes, "sm");
   color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '90'));
@@ -14,7 +13,7 @@
   border: map.get(variables.$border-widths, '1') solid rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '10'));
 }
 
-.pre {
+pre, .pre {
   font-family: map.get(variables.$fonts, "code");
   font-size: map.get(variables.$font-sizes, "sm");
   color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '90'));
@@ -29,7 +28,7 @@
   overflow-x: auto;
   white-space: pre;
 
-  .code {
+  code, .code {
     background: none;
     border: none;
     padding: map.get(variables.$padding, '0');

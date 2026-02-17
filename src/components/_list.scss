@@ -2,7 +2,7 @@
 @use "../variables/index" as variables;
 
 // Lists
-.list {
+ul, ol, dl, .list {
   margin-top: map.get(variables.$margin, '0');
   margin-bottom: map.get(variables.$margin, '4');
   padding-left: map.get(variables.$padding, '6');
@@ -10,27 +10,28 @@
   color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '80'));
 }
 
-.list-item {
+li, .list-item {
   line-height: map.get(variables.$line-height, "normal");
 }
 
+ul ul, ul ol, ol ul, ol ol,
 .list .list {
   margin-bottom: map.get(variables.$margin, '0');
 }
 
-.list-unordered {
+ul, .list-unordered {
   list-style-type: disc;
 }
 
-.list-ordered {
+ol, .list-ordered {
   list-style-type: decimal;
 }
 
-.list-term {
+dt, .list-term {
   font-weight: map.get(variables.$font-weights, "bold");
 }
 
-.list-detail {
+dd, .list-detail {
   margin-bottom: map.get(variables.$margin, '2');
   margin-left: map.get(variables.$margin, '0');
 }

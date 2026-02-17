@@ -28,7 +28,7 @@
 }
 
 // Form wrapper
-.form {
+form, .form {
   max-width: map.get(variables.$max-widths, 'sm');
   padding: map.get(variables.$padding, '5');
   border-radius: map.get(variables.$border-radius, 'md');
