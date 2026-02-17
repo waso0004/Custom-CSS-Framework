@@ -11,6 +11,12 @@ table, .table {
   font-size: map.get(variables.$font-sizes, "md");
   margin-bottom: map.get(variables.$margin, '4');
   color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '80'));
+  background-color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '2'));
+  border: map.get(variables.$border-widths, '1') solid rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '15'));
+  border-radius: map.get(variables.$border-radius, 'md');
+  backdrop-filter: blur(map.get(variables.$blur, '1'));
+  -webkit-backdrop-filter: blur(map.get(variables.$blur, '1'));
+  overflow: hidden;
 
   thead {
     background-color: rgba(map.get(variables.$colors, "white"), map.get(variables.$opacity, '5'));

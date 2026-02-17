@@ -609,6 +609,12 @@ table, .table {
   font-size: 16px;
   margin-bottom: 16px;
   color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  overflow: hidden;
 }
 table thead, .table thead {
   background-color: rgba(255, 255, 255, 0.05);
