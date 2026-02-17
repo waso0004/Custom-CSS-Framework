@@ -1,47 +1,6 @@
-# Frosted CSS Framework
+# Frosted
 
-A lightweight, frosted-glass-themed CSS framework built with Sass. It provides sensible base styling for plain HTML elements and optional utility/component classes for customization.
-
----
-
-## Project To-Do List
-
-### 1) Build the framework with Sass
-- [x] Create the CSS Framework using Sass
-- [x] Organize it using Sass partials (multiple `.scss` files that get imported into a main file)
-
-### 2) Add customization support
-- [x] Use CSS variables or Sass variables so users can customize the framework (colors, spacing, fonts, etc.)
-
-### 3) Create a theme for standard HTML elements
-- [x] Headings (`h1` to `h6`)
-- [x] Lists (`ul`, `ol`, `li`, `dl`, `dt`, `dd`)
-- [x] Buttons (`button`)
-- [x] Forms (`form`, `label`, `input`, `textarea`)
-- [x] Inputs (text, email, password, textarea, checkbox, radio)
-- [x] Tables (`table`, `thead`, `tbody`, `tr`, `th`, `td`)
-- [x] Other common base elements (`p`, `a`, `code`, `pre`, `kbd`, `samp`)
-
-### 4) Create utility classes
-- [x] Color (text + background)
-- [x] Font weight
-- [x] Font size
-- [x] Margin
-- [x] Padding
-- [x] Border
-
-### 5) Ensure the theme looks consistent and good
-- [x] Apply the theme consistently across all elements
-- [x] Make sure everything looks appealing together
-
-### 6) Include the compiled CSS in the repo
-- [x] Compile Sass into a final CSS file (`css/frosted.css`)
-- [x] Include that compiled output in the repository
-
-### 7) Write the README documentation
-- [x] Installation
-- [x] Usage
-- [x] Customization
+A lightweight, class-based CSS framework built with Sass. Frosted gives your UI a frosted glass aesthetic with semi-transparent backgrounds, soft borders, and backdrop blur. All styling is applied through classes, and every design token is driven by Sass variable maps so you can customize colors, spacing, typography, and more.
 
 ---
 
@@ -52,17 +11,14 @@ A lightweight, frosted-glass-themed CSS framework built with Sass. It provides s
    git clone https://github.com/your-username/Custom-CSS-Framework.git
    ```
 
-2. Link the compiled CSS in your HTML:
+2. Add the compiled stylesheet to your HTML:
    ```html
    <link rel="stylesheet" href="css/frosted.css" />
    ```
 
-3. (Optional) If you want to modify and recompile the Sass source, install Sass globally:
+3. If you want to edit the source and recompile, install Sass and run:
    ```bash
    npm install -g sass
-   ```
-   Then compile:
-   ```bash
    sass src/frosted.scss css/frosted.css
    ```
 
@@ -70,127 +26,97 @@ A lightweight, frosted-glass-themed CSS framework built with Sass. It provides s
 
 ## Usage
 
-The framework styles plain HTML elements automatically — no classes required for base styling. Just write standard HTML and it works:
+Frosted is class-based. Add the provided classes to your HTML elements to apply styles.
 
+### Components
+
+**Headings** use `.h1` through `.h6`:
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="css/frosted.css" />
-</head>
-<body>
-  <h1>Hello World</h1>
-  <p>This paragraph is styled automatically.</p>
-
-  <ul>
-    <li>Item one</li>
-    <li>Item two</li>
-  </ul>
-
-  <button>Click Me</button>
-
-  <form>
-    <label for="name">Name</label>
-    <input type="text" id="name" placeholder="Enter name..." />
-    <button type="submit">Submit</button>
-  </form>
-
-  <table>
-    <thead>
-      <tr><th>Name</th><th>Role</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Alice</td><td>Developer</td></tr>
-    </tbody>
-  </table>
-</body>
-</html>
+<h1 class="h1">Page Title</h1>
+<h2 class="h2">Section Title</h2>
 ```
 
-### Optional Component Classes
+**Buttons** use `.btn` with optional color variants:
+```html
+<button class="btn">Default</button>
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-error">Error</button>
+```
 
-For more control, you can use the included component classes:
+**Forms** can use the `.form` wrapper, which auto-styles child labels, inputs, and selects. You can also use standalone classes like `.form-group`, `.form-label`, `.form-control`, `.form-select`, `.form-check`, `.form-check-input`, and `.form-check-label`:
+```html
+<form class="form">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" placeholder="you@example.com" />
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+```
 
-| Class | Description |
-|---|---|
-| `.btn` | Button styling |
-| `.btn-primary`, `.btn-success`, `.btn-error` | Button color variants |
-| `.form` | Frosted form card wrapper |
-| `.form-label`, `.form-control` | Standalone form element classes |
-| `.table`, `.table-frosted`, `.table-striped`, `.table-hover` | Table variants |
-| `.container`, `.row`, `.col-1` to `.col-12` | Grid layout |
+**Tables** use `.table` with optional `.table-frosted`, `.table-striped`, and `.table-hover`:
+```html
+<table class="table table-frosted table-striped table-hover">
+  <thead>
+    <tr><th>Name</th><th>Role</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Alice</td><td>Developer</td></tr>
+  </tbody>
+</table>
+```
+
+**Lists** use `.list` with `.list-item`, `.list-unordered`, `.list-ordered`, `.list-term`, and `.list-detail`.
+
+**Links** use `.link`. **Code** uses `.code`, `.kbd`, `.samp`, and `.pre`.
+
+### Grid
+
+The grid uses `.container`, `.row`, and `.col-1` through `.col-12`. Use `.col` for equal-width columns or `.col-auto` for content-sized columns:
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-6">Half</div>
+    <div class="col-6">Half</div>
+  </div>
+</div>
+```
 
 ### Utility Classes
 
-| Prefix | Examples | Description |
-|---|---|---|
-| `.text-{color}` | `.text-blue`, `.text-red` | Text color |
-| `.bg-{color}` | `.bg-blue`, `.bg-black` | Background color |
-| `.fw-{weight}` | `.fw-bold`, `.fw-light` | Font weight |
-| `.fs-{size}` | `.fs-sm`, `.fs-lg` | Font size |
-| `.m-{n}`, `.mt-{n}`, `.mx-{n}` | `.m-4`, `.mt-2` | Margin (0–8) |
-| `.p-{n}`, `.pt-{n}`, `.px-{n}` | `.p-4`, `.px-2` | Padding (0–8) |
-| `.border`, `.border-{n}` | `.border`, `.border-2` | Border width |
-| `.rounded`, `.rounded-{size}` | `.rounded`, `.rounded-lg` | Border radius |
+| Class | Description |
+|---|---|
+| `.text-{color}` | Text color (e.g. `.text-white`, `.text-blue`) |
+| `.bg-{color}` | Background color with frosted glass effect (e.g. `.bg-black`, `.bg-purple`) |
+| `.fw-{weight}` | Font weight (e.g. `.fw-bold`, `.fw-light`) |
+| `.text-{size}` | Font size (e.g. `.text-sm`, `.text-lg`, `.text-3xl`) |
+| `.m-{n}`, `.mt-{n}`, `.mr-{n}`, `.mb-{n}`, `.ml-{n}`, `.mx-{n}`, `.my-{n}` | Margin, 0 to 8 |
+| `.p-{n}`, `.pt-{n}`, `.pr-{n}`, `.pb-{n}`, `.pl-{n}`, `.px-{n}`, `.py-{n}` | Padding, 0 to 8 |
+| `.border`, `.border-{n}` | Border width |
+| `.border-{color}` | Border color |
+| `.rounded-{size}` | Border radius (`0`, `sm`, `md`, `full`) |
+| `.blur-{n}` | Backdrop blur (0 to 3) |
+| `.opacity-{n}` | Opacity |
+| `.tracking-{n}` | Letter spacing |
+| `.leading-{n}` | Line height (`tight`, `normal`) |
+| `.max-w-{size}` | Max width (`sm`, `md`, `lg`) |
+| `.mx-auto` | Center horizontally |
 
 ---
 
 ## Customization
 
-All design tokens are defined as Sass maps in `src/variables/`:
+All design tokens live in Sass maps under `src/variables/`. To customize the framework, edit the maps and recompile with `sass src/frosted.scss css/frosted.css`.
 
-| File | Variables |
-|---|---|
-| `_colors.scss` | `$colors` (white, black, gray, blue, green, red, purple, pink, yellow), `$theme` (primary, success, error, light, dark) |
-| `_typography.scss` | `$fonts` (body, heading, code), `$font-sizes` (sm, md, lg, xl, 2xl, 3xl) |
-| `_spacing.scss` | `$spacing` (0–8, from 0 to 64px) |
-| `_font-weight.scss` | `$font-weights` (light, regular, medium, bold) |
+**Colors** are defined in `$colors` inside `src/variables/_colors.scss`. To add a new color, add an entry like `'orange': #ffa726` to the map. This generates `.text-orange`, `.bg-orange`, and `.border-orange` utilities automatically.
 
-To customize, edit the variable maps and recompile:
+**Theme colors** are defined in `$theme` in the same file. They map semantic names to color values, for example `'primary': map.get($colors, 'blue')`. To change the primary color, point it to a different value from `$colors` or any hex color.
 
-```bash
-sass src/frosted.scss css/frosted.css
-```
+**Font sizes** are in `$font-sizes` inside `src/variables/_typography.scss`. Each entry like `'lg': 24px` generates a `.text-lg` utility class. Add or change entries to create new sizes.
 
----
+**Spacing** is in `$spacing` inside `src/variables/_spacing.scss`. The scale runs from `'0': 0` to `'8': 64px` and drives all margin and padding utilities.
 
-## Project Structure
+**Font weights** are in `$font-weights` inside `src/variables/_font-weight.scss`. Each entry like `'bold': 700` generates a `.fw-bold` utility.
 
-```
-src/
-├── frosted.scss          # Main entry point
-├── index.html            # Demo page (plain HTML)
-├── reset/
-│   └── _reset.scss       # CSS reset (the-new-css-reset v1.11.3)
-├── base/
-│   └── _base.scss        # Element-level base defaults
-├── variables/
-│   ├── _colors.scss      # Color maps
-│   ├── _typography.scss   # Font families & sizes
-│   ├── _spacing.scss      # Spacing scale
-│   ├── _font-weight.scss  # Font weight scale
-│   ├── _margin.scss       # Margin variables
-│   ├── _padding.scss      # Padding variables
-│   └── _border.scss       # Border variables
-├── components/
-│   ├── _button.scss       # Button mixin & classes
-│   ├── _form.scss         # Form mixin & classes
-│   ├── _table.scss        # Table classes
-│   ├── _heading.scss      # Heading mixin
-│   ├── _list.scss         # List mixin
-│   ├── _link.scss         # Link mixin
-│   ├── _code.scss         # Code/pre mixin
-│   └── _grid.scss         # Grid system
-├── utilities/
-│   ├── _colors.scss       # Color utility classes
-│   ├── _font-weight.scss  # Font weight utilities
-│   ├── _typography.scss   # Font size utilities
-│   ├── _margin.scss       # Margin utilities
-│   ├── _padding.scss      # Padding utilities
-│   └── _border.scss       # Border utilities
-└── fonts/
-    ├── _roboto.scss       # Roboto font import
-    └── _roboto-mono.scss  # Roboto Mono font import
-css/
-└── frosted.css            # Compiled output
-```
+**Border and blur** values are in `src/variables/_border.scss`. The `$border-radius` map controls `.rounded-{size}` classes, and `$blur` controls `.blur-{n}` classes.
