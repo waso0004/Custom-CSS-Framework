@@ -1,33 +1,57 @@
 @use "sass:map";
-@use "../variables/_typography" as typography;
-@use "../variables/_colors" as colors;
-@use "../variables/_spacing" as spacing;
-@use "../variables/_font-weight" as font-weight;
+@use "../variables/index" as variables;
 
-//base 
-table {
+// Base table class — user applies .table to opt in
+.table {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
   border-collapse: collapse;
-  font-family: map.get(typography.$fonts, "body");
-  font-size: map.get(typography.$font-sizes, "md");
-  margin-bottom: map.get(spacing.$spacing, "4");
-}
-thead {
-  background-color: map.get(colors.$colors, "blue");
+  font-family: map.get(variables.$fonts, "body");
+  font-size: map.get(variables.$font-sizes, "md");
+  margin-bottom: map.get(variables.$spacing, "4");
+  color: map.get(variables.$colors, "white");
+
+  thead {
+    background-color: rgba(map.get(variables.$colors, "blue"), 0.3);
+  }
+
+  th {
+    text-align: left;
+    font-weight: map.get(variables.$font-weights, "bold");
+    padding: map.get(variables.$spacing, "3");
+    border: 0.5px solid rgba(map.get(variables.$colors, "white"), 0.15);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  td {
+    padding: map.get(variables.$spacing, "3");
+    border: 0.5px solid rgba(map.get(variables.$colors, "white"), 0.15);
+  }
 }
 
-//header
-th {
-  text-align: left;
-  font-weight: map.get(font-weight.$font-weights, "bold");
-  padding: map.get(spacing.$spacing, "3");
-  border: 0.5px solid map.get(colors.$colors, "white");
+// Frosted glass table variant
+.table-frosted {
+  background-color: rgba(map.get(variables.$colors, "white"), 0.02);
+  border: 1px solid rgba(map.get(variables.$colors, "white"), 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  overflow: hidden;
 }
 
-//cell
-td {
-  padding: map.get(spacing.$spacing, "3");
-  border: 0.5px solid map.get(colors.$colors, "white");
+// Striped rows
+.table-striped {
+  tbody tr:nth-child(odd) {
+    background-color: rgba(map.get(variables.$colors, "white"), 0.04);
+  }
+}
+
+// Hoverable rows
+.table-hover {
+  tbody tr:hover {
+    background-color: rgba(map.get(variables.$colors, "white"), 0.1);
+  }
 }

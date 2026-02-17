@@ -1,42 +1,43 @@
 @use "sass:map";
 @use "../variables/index" as variables;
 
-// Base heading styling
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    margin-bottom: map.get(variables.$spacing, "4");
+// Heading defaults mixin — applied by _base.scss
+@mixin f-headings {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
     font-family: map.get(variables.$fonts, "heading");
+    color: map.get(variables.$colors, "white");
+    font-weight: 500;
     line-height: 1.2;
-    letter-spacing: 0.05em;
-}
+  }
 
-h1 {
-  font-size: map.get(variables.$font-sizes, "3xl");
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+  h1 {
+    font-size: 2.5rem;
+  }
 
-h2 {
-  font-size: map.get(variables.$font-sizes, "2xl");
-}
+  h2 {
+    font-size: 2rem;
+  }
 
-h3 {
-  font-size: map.get(variables.$font-sizes, "xl");
-}
+  h3 {
+    font-size: 1.75rem;
+  }
 
-h4 {
-  font-size: map.get(variables.$font-sizes, "lg");
-}
+  h4 {
+    font-size: 1.5rem;
+  }
 
-h5 {
-  font-size: map.get(variables.$font-sizes, "md");
-}
+  h5 {
+    font-size: 1.25rem;
+  }
 
-h6 {
-  font-size: map.get(variables.$font-sizes, "sm");
+  h6 {
+    font-size: 1rem;
+  }
 }

@@ -1,0 +1,8 @@
+@use '../variables/index' as variables;
+
+// Font size utilities
+@each $name, $size in variables.$font-sizes {
+    .text-#{$name} {
+        font-size: $size;
+    }
+}

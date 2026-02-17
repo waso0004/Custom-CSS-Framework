@@ -1,0 +1,26 @@
+@use '../variables/index' as variables;
+
+// Padding utilities
+@each $name, $size in variables.$spacing {
+    .p-#{$name} {
+        padding: $size;
+    }
+    .pt-#{$name} {
+        padding-top: $size;
+    }
+    .pr-#{$name} {
+        padding-right: $size;
+    }
+    .pb-#{$name} {
+        padding-bottom: $size;
+    }
+    .pl-#{$name} {
+        padding-left: $size;
+    }
+    .px-#{$name} {
+        padding-inline: $size;
+    }
+    .py-#{$name} {
+        padding-block: $size;
+    }
+}

@@ -5,56 +5,10 @@
 @use "../variables/font-weight" as font-weight;
 @use "../components/index" as components;
 
-// Headings
-h1 {
-  font-family: map.get(typography.$fonts, "heading");
-  font-size: map.get(typography.$font-sizes, "3xl");
-  font-weight: map.get(font-weight.$font-weights, "bold");
-  color: map.get(colors.$colors, "white");
-  margin-bottom: map.get(spacing.$spacing, "3");
-}
+// ── Reboot / Global defaults ─────────────────────────────
+// Default look applied to bare HTML elements.
+// End users can override with utility/component classes.
 
-h2 {
-  font-family: map.get(typography.$fonts, "heading");
-  font-size: map.get(typography.$font-sizes, "2xl");
-  font-weight: map.get(font-weight.$font-weights, "bold");
-  color: map.get(colors.$colors, "white");
-  margin-bottom: map.get(spacing.$spacing, "3");
-}
-
-h3 {
-  font-family: map.get(typography.$fonts, "heading");
-  font-size: map.get(typography.$font-sizes, "xl");
-  font-weight: map.get(font-weight.$font-weights, "medium");
-  color: map.get(colors.$colors, "white");
-  margin-bottom: map.get(spacing.$spacing, "2");
-}
-
-h4 {
-  font-family: map.get(typography.$fonts, "heading");
-  font-size: map.get(typography.$font-sizes, "lg");
-  font-weight: map.get(font-weight.$font-weights, "medium");
-  color: map.get(colors.$colors, "white");
-  margin-bottom: map.get(spacing.$spacing, "2");
-}
-
-h5 {
-  font-family: map.get(typography.$fonts, "heading");
-  font-size: map.get(typography.$font-sizes, "md");
-  font-weight: map.get(font-weight.$font-weights, "medium");
-  color: map.get(colors.$colors, "white");
-  margin-bottom: map.get(spacing.$spacing, "1");
-}
-
-h6 {
-  font-family: map.get(typography.$fonts, "heading");
-  font-size: map.get(typography.$font-sizes, "sm");
-  font-weight: map.get(font-weight.$font-weights, "medium");
-  color: map.get(colors.$colors, "white");
-  margin-bottom: map.get(spacing.$spacing, "1");
-}
-
-// Body text
 body {
   font-family: map.get(typography.$fonts, "body");
   font-size: map.get(typography.$font-sizes, "md");
@@ -65,43 +19,26 @@ body {
 }
 
 p {
-  font-family: map.get(typography.$fonts, "body");
-  font-size: map.get(typography.$font-sizes, "md");
-  margin-bottom: map.get(spacing.$spacing, "3");
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: rgba(map.get(colors.$colors, "white"), 0.8);
 }
 
-// Lists
-ul,
-dl,
-ol {
-  font-family: map.get(typography.$fonts, "body");
-  font-size: map.get(typography.$font-sizes, "md");
-  margin: 0 0 map.get(spacing.$spacing, "3") 0;
-  padding-left: map.get(spacing.$spacing, "5");
-}
+// ── Typography defaults ─────────────────────────────────
+@include components.f-headings;
+@include components.f-lists;
+@include components.f-code;
+@include components.f-link;
 
-li {
-  margin-bottom: map.get(spacing.$spacing, "1");
-  line-height: 1.6;
-}
-
-// Code
-code,
-pre,
-kbd,
-samp {
-  font-family: map.get(typography.$fonts, "code");
-}
-
-// Default button
+// ── Button default ─────────────────────────────────────
 button {
   @include components.f-button;
 }
 
-// Forms
+// ── Form defaults ─────────────────────────────────────
 form {
   max-width: 50%;
-  margin: 0 auto;
+  margin: 0;
   padding: 24px;
   border-radius: 20px;
   background-color: rgba(map.get(colors.$colors, "white"), 0.02);
@@ -112,35 +49,13 @@ form {
   label {
     display: block;
     margin-bottom: 8px;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
     color: rgba(map.get(colors.$colors, "white"), 0.8);
   }
 
   input,
   textarea {
-    width: 100%;
-    padding: 12px 24px;
-    border-radius: 20px;
-    border: 1px solid rgba(map.get(colors.$colors, "white"), 0.15);
-    background-color: rgba(map.get(colors.$colors, "white"), 0.02);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    color: rgba(map.get(colors.$colors, "white"), 0.8);
-    font-size: 14px;
-    letter-spacing: 2px;
+    @include components.f-input;
     margin-bottom: 16px;
-
-    &:hover {
-      background-color: rgba(map.get(colors.$colors, "white"), 0.2);
-    }
-
-    &:focus {
-      outline: none;
-      border-color: rgba(map.get(colors.$colors, "blue"), 0.4);
-      background-color: rgba(map.get(colors.$colors, "blue"), 0.3);
-    }
   }
 
   input[type="checkbox"],
@@ -151,42 +66,51 @@ form {
     margin-right: 8px;
     margin-bottom: 0;
     cursor: pointer;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: transparent;
+    border: revert;
+    border-radius: revert;
+    padding: revert;
   }
 
-  select {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 100%;
+}
+
+// ── Table defaults ────────────────────────────────────
+table {
+  max-width: 50%;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: map.get(typography.$fonts, "body");
+  color: rgba(map.get(colors.$colors, "white"), 0.8);
+  background-color: rgba(map.get(colors.$colors, "white"), 0.02);
+  border: 1px solid rgba(map.get(colors.$colors, "white"), 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  overflow: hidden;
+
+  thead {
+    background-color: rgba(map.get(colors.$colors, "white"), 0.05);
+  }
+
+  th,
+  td {
+    text-align: left;
     padding: 12px 24px;
-    padding-right: 48px;
-    border-radius: 20px;
-    border: 1px solid rgba(map.get(colors.$colors, "white"), 0.15);
-    background-color: rgba(map.get(colors.$colors, "white"), 0.02);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    color: rgba(map.get(colors.$colors, "white"), 0.8);
-    font-size: 14px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    margin-bottom: 16px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(255,255,255,0.8)' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 20px center;
+    border-bottom: 1px solid rgba(map.get(colors.$colors, "white"), 0.15);
+  }
 
-    &:hover {
-      background-color: rgba(map.get(colors.$colors, "white"), 0.2);
-    }
+  th {
+    font-weight: map.get(font-weight.$font-weights, "bold");
+  }
 
-    &:focus {
-      outline: none;
-      border-color: rgba(map.get(colors.$colors, "blue"), 0.4);
-      background-color: rgba(map.get(colors.$colors, "blue"), 0.3);
-    }
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
 
-    option {
-      background-color: map.get(colors.$colors, "black");
-      color: rgba(map.get(colors.$colors, "white"), 0.8);
-      padding: 12px;
-    }
+  tbody tr:hover {
+    background-color: rgba(map.get(colors.$colors, "white"), 0.1);
   }
 }

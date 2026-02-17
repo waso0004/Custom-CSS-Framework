@@ -1,26 +1,2 @@
-@use './spacing' as spacing;
-
-// Padding all sides
-@each $name, $size in spacing.$spacing {
-    .p-#{$name} {
-        padding: $size;
-    }
-    .pt-#{$name} {
-        padding-top: $size;
-    }
-    .pr-#{$name} {
-        padding-right: $size;
-    }
-    .pb-#{$name} {
-        padding-bottom: $size;
-    }
-    .pl-#{$name} {
-        padding-left: $size;
-    }
-    .px-#{$name} {
-        padding-inline: $size;
-    }
-    .py-#{$name} {
-        padding-block: $size;
-    }
-}
+// Padding variables are defined via spacing.
+// Utility classes are in utilities/_padding.scss.

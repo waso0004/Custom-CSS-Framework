@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../variables/index' as variables;
 
+// Button mixin — reusable core
 @mixin f-button($bg-color: rgba(map.get(variables.$colors, 'white'), 0.02), $border-color: rgba(map.get(variables.$colors, 'white'), 0.15), $text-color: rgba(map.get(variables.$colors, 'white'), 0.8)) {
     appearance: none;
     -webkit-appearance: none;
@@ -27,6 +28,12 @@
     }
 }
 
+// Base button class — user applies .btn to opt in
+.btn {
+    @include f-button;
+}
+
+// Color variants
 .btn-primary {
     @include f-button(
         $bg-color: rgba(map.get(variables.$colors, 'blue'), 0.3),

@@ -1,0 +1,46 @@
+@use 'sass:map';
+@use '../variables/index' as variables;
+
+// Border width utilities
+@each $name, $width in variables.$border-widths {
+    .border-#{$name} {
+        border-width: $width;
+        border-style: solid;
+    }
+}
+
+.border {
+    border: 1px solid;
+}
+
+.border-none {
+    border: none;
+}
+
+// Border color utilities
+@each $color-name, $color-value in variables.$colors {
+    .border-#{$color-name} {
+        border-color: $color-value;
+    }
+}
+
+// Border radius utilities
+.rounded-none {
+    border-radius: 0;
+}
+
+.rounded-sm {
+    border-radius: 4px;
+}
+
+.rounded {
+    border-radius: 8px;
+}
+
+.rounded-lg {
+    border-radius: 16px;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}

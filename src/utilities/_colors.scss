@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use '../variables/index' as variables;
+
+// Background color utilities
+@each $color-name, $color-value in variables.$colors {
+    .bg-#{$color-name} {
+        background-color: $color-value;
+    }
+}
+
+// Text color utilities
+@each $color-name, $color-value in variables.$colors {
+    .text-#{$color-name} {
+        color: $color-value;
+    }
+}

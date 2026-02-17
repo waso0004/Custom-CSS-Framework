@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../variables/index" as variables;
+
+// Code defaults mixin — applied by _base.scss
+@mixin f-code {
+  code,
+  kbd,
+  samp {
+    font-family: map.get(variables.$fonts, "code");
+    font-size: map.get(variables.$font-sizes, "sm");
+    color: rgba(map.get(variables.$colors, "white"), 0.9);
+    background-color: rgba(map.get(variables.$colors, "white"), 0.08);
+    padding: 2px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(map.get(variables.$colors, "white"), 0.1);
+  }
+
+  pre {
+    font-family: map.get(variables.$fonts, "code");
+    font-size: map.get(variables.$font-sizes, "sm");
+    color: rgba(map.get(variables.$colors, "white"), 0.9);
+    background-color: rgba(map.get(variables.$colors, "white"), 0.02);
+    border: 1px solid rgba(map.get(variables.$colors, "white"), 0.15);
+    border-radius: 20px;
+    padding: 16px 24px;
+    margin-bottom: map.get(variables.$spacing, "4");
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    overflow-x: auto;
+
+    code {
+      background: none;
+      border: none;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+}

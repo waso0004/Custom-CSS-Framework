@@ -1,0 +1,30 @@
+@use '../variables/index' as variables;
+
+// Margin utilities
+@each $name, $size in variables.$spacing {
+    .m-#{$name} {
+        margin: $size;
+    }
+    .mt-#{$name} {
+        margin-top: $size;
+    }
+    .mr-#{$name} {
+        margin-right: $size;
+    }
+    .mb-#{$name} {
+        margin-bottom: $size;
+    }
+    .ml-#{$name} {
+        margin-left: $size;
+    }
+    .mx-#{$name} {
+        margin-inline: $size;
+    }
+    .my-#{$name} {
+        margin-block: $size;
+    }
+}
+
+.mx-auto {
+    margin-inline: auto;
+}

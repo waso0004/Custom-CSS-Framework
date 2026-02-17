@@ -15,8 +15,4 @@ $font-sizes: (
     '3xl': 64px
 );
 
-@each $name, $size in $font-sizes {
-    .text-#{$name} {
-        font-size: $size;
-    }
-}
+

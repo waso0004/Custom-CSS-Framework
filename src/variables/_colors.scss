@@ -12,16 +12,6 @@ $colors: (
     'yellow': #fff59d,
 );
 
-@each $color-name, $color-value in $colors {
-    .bg-#{$color-name} {
-        background-color: $color-value;
-    }
-
-    .text-#{$color-name} {
-        color: $color-value;
-    }
-}
-
 $theme: (
     'primary': map.get($colors, 'blue'),
     'success': map.get($colors, 'green'),
